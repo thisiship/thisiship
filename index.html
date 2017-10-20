@@ -9,6 +9,20 @@
     <meta name="author" content="source - http://github.com/tonisbones">
 	<title> This Is Hip </title>
 
+	<script>
+		$.getJSON( "1197266347044134.json", function( data ) {
+		var items = [];
+		$.each( data, function( key, val ) {
+			items.push( "<li id='" + key + "'>" + val + "</li>" );
+		});
+
+		$( "<ul/>", {
+			"class": "my-new-list",
+			html: items.join( "" )
+		}).appendTo( "body" );
+		});
+	</script>
+	
 </head>
 <body>
 	<h1> Hello World </h1>
