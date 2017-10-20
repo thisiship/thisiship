@@ -9,19 +9,37 @@
     <meta name="author" content="source - http://github.com/tonisbones">
 	<title> This Is Hip </title>
 
-	<script>
-		$(document).ready(function() {
-			$.getJSON("/events/1197266347044134.json", function( data ) {
-				$("#json_dump").text(data);
-			});
-		});
-	</script>
 	
 </head>
 <body>
 	<h1> Hello World </h1>
 	<p id="json_dump"> No Json Found </p>
 
+	<script>
+		$(document).ready(function() {
+			// Assign handlers immediately after making the request,
+			// and remember the jqxhr object for this request
+			var jqxhr = $.getJSON( "http://tonisbones.github.io/thisiship/events/1197266347044134.json", function() {
+			  console.log( "success" );
+			})
+				.done(function() {
+					console.log( "second success" );
+				})
+				.fail(function() {
+					console.log( "error" );
+				})
+				.always(function() {
+					console.log( "complete" );
+				 });
+
+			// Perform other work here ...
+
+			// Set another completion function for the request above
+			jqxhr.complete(function() {
+			  console.log( "second complete" );
+			});
+		});
+	</script>
 
 
 
