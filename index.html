@@ -10,8 +10,10 @@
 	<title> This Is Hip </title>
 
 	<script>
-		$.getJSON( "1197266347044134.json", function( data ) {
-			$("#json_dump").text(data);
+		$(document).ready(function() {
+			$.getJSON("/events/1197266347044134.json", function( data ) {
+				$("#json_dump").text(data);
+			});
 		});
 	</script>
 	
