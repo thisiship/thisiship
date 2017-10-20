@@ -13,36 +13,21 @@
 </head>
 <body>
 	<h1> Hello World </h1>
-	<p id="json_dump"> No Json Found </p>
+	<p id="event_name"> </p>
+	<p id="event_desc"> </p>
+	<p id="event_start"> </p>
+	<p id="event_end"> </p>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			// Assign handlers immediately after making the request,
-			// and remember the jqxhr object for this request
-			var jqxhr = $.getJSON( "https://tonisbones.github.io/thisiship/events/1197266347044134.json", function() {
-			  console.log( "success" );
-			})
-				.done(function() {
-					console.log( "second success" );
-				})
-				.fail(function() {
-					console.log( "error" );
-				})
-				.always(function() {
-					console.log( "complete" );
-				 });
-
-			// Perform other work here ...
-
-			// Set another completion function for the request above
-			jqxhr.complete(function() {
-			  console.log( "second complete" );
+			$.getJSON( "https://tonisbones.github.io/thisiship/events/1197266347044134.json", function(data) {
+				$("#event_name").text("Event Name: " + data.name);
+				$("#event_desc").text("Event Description: " + data.description);
+				$("#event_start").text("Event Start: " + data.start_time);
+				$("#event_end").text("Event End: " + data.start_time);
 			});
-			console.log(jqxhr);
 		});
 	</script>
-
-
 
 
     <!-- Bootstrap core JavaScript
