@@ -11,21 +11,14 @@
 
 	<script>
 		$.getJSON( "1197266347044134.json", function( data ) {
-		var items = [];
-		$.each( data, function( key, val ) {
-			items.push( "<li id='" + key + "'>" + val + "</li>" );
-		});
-
-		$( "<ul/>", {
-			"class": "my-new-list",
-			html: items.join( "" )
-		}).appendTo( "body" );
+			$("#json_dump").text(data);
 		});
 	</script>
 	
 </head>
 <body>
 	<h1> Hello World </h1>
+	<p id="json_dump"> No Json Found </p>
 
 
 
