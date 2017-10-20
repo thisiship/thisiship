@@ -19,7 +19,7 @@
 		$(document).ready(function() {
 			// Assign handlers immediately after making the request,
 			// and remember the jqxhr object for this request
-			var jqxhr = $.getJSON( "http://tonisbones.github.io/thisiship/events/1197266347044134.json", function() {
+			var jqxhr = $.getJSON( "https://tonisbones.github.io/thisiship/events/1197266347044134.json", function() {
 			  console.log( "success" );
 			})
 				.done(function() {
@@ -38,6 +38,7 @@
 			jqxhr.complete(function() {
 			  console.log( "second complete" );
 			});
+			console.log(jqxhr);
 		});
 	</script>
 
