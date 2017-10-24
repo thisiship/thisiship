@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Website for viewing local music events">
+    <meta name="author" content="source - http://github.com/tonisbones">
+	<title> This Is Hip </title>
+
+    <script src="js/vendor/jquery.min.js"></script>
+</head>
+<body>
+	<h1> This is Hip </h1>
+	<h3 id="event_name"> </h3>
+	<p id="event_start"> </p>
+	<p id="event_end"> </p>
+	<p id="event_desc"> </p>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var url_beginning = "https://tonisbones.github.io/facebookeventjsondump/events/";
+			var url_extension = ".json";
+			function getSearchParameters() {
+				var prmstr = window.location.search.substr(1);
+				return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+			}
+
+			function transformToAssocArray( prmstr ) {
+				var params = {};
+				var prmarr = prmstr.split("&");
+				for ( var i = 0; i < prmarr.length; i++) {
+					var tmparr = prmarr[i].split("=");
+					params[tmparr[0]] = tmparr[1];
+				}
+				return params;
+			}
+
+			var params = getSearchParameters();
+			var event_id = params.event_id;
+			if (event_id != null) {
+				var url_for_json = url_beginning + event_id + url_extension;
+				$.getJSON( url_for_json, function(data) {
+					$("#event_name").text("Event Name: " + data.name);
+					$("#event_desc").text("Event Description: " + data.description);
+					$("#event_start").text("Event Start: " + data.start_time);
+					$("#event_end").text("Event End: " + data.start_time);
+				})
+				.fail(function () {
+					console.log("Failed to find event: " + event_id);
+					$("#event_name").text("Failed to find event: " + event_id);
+				});
+			}
+		});
+	</script>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+</body>

@@ -19,7 +19,7 @@ if __name__ == "__main__":
     event_id = sys.argv[1]
     fb_event = get_event_info(graph, event_id)
     print(fb_event)
-    new_file_name = 'events/' + event_id + '.json'
+    new_file_name = '../facebookeventjsondump/events/' + event_id + '.json'
     with open(new_file_name, 'w') as event_json_file:
         json.dump(fb_event, event_json_file)
 

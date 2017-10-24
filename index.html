@@ -13,22 +13,8 @@
 </head>
 <body>
 	<h1> This is Hip </h1>
-	<h3 id="event_name"> </h3>
-	<p id="event_start"> </p>
-	<p id="event_end"> </p>
-	<p id="event_desc"> </p>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$.getJSON( "https://tonisbones.github.io/thisiship/events/1197266347044134.json", function(data) {
-				$("#event_name").text("Event Name: " + data.name);
-				$("#event_desc").text("Event Description: " + data.description);
-				$("#event_start").text("Event Start: " + data.start_time);
-				$("#event_end").text("Event End: " + data.start_time);
-			});
-		});
-	</script>
-
+	<a href="view_event.html?event_id=277857366034171"> 277857366034171 </a>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
