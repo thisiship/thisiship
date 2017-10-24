@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+import facebook
+import json
+import sys
+import os
+
+head_of_doc = """<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,16 +17,8 @@
     <script src="js/vendor/jquery.min.js"></script>
 </head>
 <body>
-    <h1> This is Hip </h1>
-    <p><a href="view_event.html?event_id=314398735693577"> 314398735693577 </a></p>
-    <p><a href="view_event.html?event_id=359572561131413"> 359572561131413 </a></p>
-    <p><a href="view_event.html?event_id=124752354274305"> 124752354274305 </a></p>
-    <p><a href="view_event.html?event_id=1524625594270144"> 1524625594270144 </a></p>
-    <p><a href="view_event.html?event_id=277857366034171"> 277857366034171 </a></p>
-    <p><a href="view_event.html?event_id=1197266347044134"> 1197266347044134 </a></p>
-    <p><a href="view_event.html?event_id=1724225011220002"> 1724225011220002 </a></p>
-    <p><a href="view_event.html?event_id=819537324894427"> 819537324894427 </a></p>
-
+    <h1> This is Hip </h1>\n"""
+end_of_doc = """
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -31,4 +28,20 @@
     <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
-</body>
+</body>\n"""
+def event_link_html(event_id):
+    event_link = "    <p><a href=\"view_event.html?event_id=" + event_id + "\"> "
+    event_link += event_id + " </a></p>\n"
+    return event_link
+if __name__ == "__main__":
+    list_of_events = os.listdir("../facebookeventjsondump/events/")
+    events_html = ""
+    for event in list_of_events:
+        event_link = event_link_html(event.split('.')[0])
+        events_html += event_link
+
+    with open ("index.html",'w') as new_index:
+        new_index.write(head_of_doc)
+        new_index.write(events_html)
+        new_index.write(end_of_doc)
+    new_index.close()
