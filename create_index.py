@@ -23,7 +23,7 @@ head_of_doc = """<!DOCTYPE html>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-light">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-info">
             <div class="container">
                 <a class="navbar-brand" href="index.html">This Is Hip</a>
             </div>
