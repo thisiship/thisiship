@@ -15,10 +15,25 @@ head_of_doc = """<!DOCTYPE html>
     <title> This Is Hip </title>
 
     <script src="js/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/thisiship.css" rel="stylesheet">
 </head>
 <body>
-    <h1> This is Hip </h1>\n"""
+    <div class="container">
+        <nav class="navbar navbar-toggleable-md navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">This Is Hip</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+    \n"""
 end_of_doc = """
+    </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -29,10 +44,12 @@ end_of_doc = """
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>\n"""
+
 def event_link_html(event_id):
     event_link = "    <p><a href=\"view_event.html?event_id=" + event_id + "\"> "
     event_link += event_id + " </a></p>\n"
     return event_link
+
 if __name__ == "__main__":
     list_of_events = os.listdir("../facebookeventjsondump/events/")
     events_html = ""
