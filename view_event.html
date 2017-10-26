@@ -61,6 +61,7 @@
 			var event_id = params.event_id;
 			if (event_id != null) {
 				var url_for_json = url_beginning + event_id + url_extension;
+				console.log("Attempting to obtain event at: " + url_for_json);
 				$.getJSON( url_for_json, function(data) {
 					$("#event_name").text("Event Name: " + data.name);
 					$("#event_desc").text("Event Description: " + data.description);
