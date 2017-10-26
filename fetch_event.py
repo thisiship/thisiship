@@ -22,6 +22,7 @@ def get_event_list(event_list_disk):
 
 if __name__ == "__main__":
     event_list_disk = "event_list.txt"
+    jsondump_loc = "jsondump/"
     graph = get_facebook_graph()
     print("Got graph")
     event_list = get_event_list(event_list_disk); 
@@ -29,10 +30,22 @@ if __name__ == "__main__":
         if (event_id is not None and event_id != ""):
             print(event_id)
             fb_event = get_event_info(graph, event_id)
-            #add a priority setting. default 0
-            fb_event["priority"] = "0"
-            print(fb_event)
-            new_file_name = '../facebookeventjsondump/events/' + event_id + '.json'
+            new_file_name = jsondump_loc  + event_id + '.json'
+            #events have default priority 0
+            event_priority = "0"
+
+            if (os.path.exists(new_file_name)):
+                print("Event exists already. Saving priority.")
+                #the file does exist. get priority from it
+                with open(new_file_name, 'r') as existing_file:
+                    event_json = json.load(existing_file)
+                    event_priority = event_json["priority"]
+                existing_file.close()
+            else:
+                #the file doesn't exist. add new file with default prio
+                print("Failed to find existing event: " + event_id)
+
+            fb_event["priority"] = event_priority
             with open(new_file_name, 'w') as event_json_file:
                 json.dump(fb_event, event_json_file)
 
