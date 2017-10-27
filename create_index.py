@@ -4,48 +4,6 @@ import sys
 import os
 from sets import Set
 
-head_of_doc = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Website for viewing local music events">
-    <meta name="author" content="source - http://github.com/tonisbones/thisiship">
-    <met name="keywords" content="tonisbones,this is hip,thisiship,music,event,events,musician,musicians,anthony decausemaker,anthonydecausemaker,anthony,decausemaker,roc,roccity,flower city,flour city">
-    <title> This Is Hip </title>
-
-    <script src="js/vendor/jquery.min.js"></script>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/thisiship.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-toggleable-md navbar-light bg-info">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">This Is Hip</a>
-            </div>
-        </nav>
-    </div>
-    \n"""
-end_of_doc = """
-    <script src="js/index.js"></script>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-</body>\n"""
-
 def get_event_link_html(event_id):
     event_link = "    <p><a href=\"view_event.html?event_id=" + event_id + "\"> "
     event_link += event_id + " </a></p>\n"
@@ -104,6 +62,17 @@ def create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, e
    return return_html
 
 if __name__ == "__main__":
+    #get document header from template
+    doc_head = ""
+    with open("templates/doc_head.txt") as head:
+        doc_head = head.read()
+    head.close()
+    #get document footer from template
+    doc_foot = ""
+    with open("templates/doc_foot.txt") as foot:
+        doc_foot = foot.read()
+    foot.close()
+        
     event_loc = "jsondump/"
     list_of_events = os.listdir(event_loc)
     events_html = ""
@@ -134,7 +103,7 @@ if __name__ == "__main__":
 
 
     with open ("index.html",'w') as new_index:
-        new_index.write(head_of_doc)
+        new_index.write(doc_head)
         #turn sets into alphabetical lists
         cities_sorted = sorted(cities_list)
         states_sorted = sorted(states_list)
@@ -146,5 +115,5 @@ if __name__ == "__main__":
         for event in event_blocks:
             new_index.write(event)
         new_index.write(event_block_end)
-        new_index.write(end_of_doc)
+        new_index.write(doc_foot)
     new_index.close()
