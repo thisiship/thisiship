@@ -108,9 +108,9 @@ if __name__ == "__main__":
     events_html = ""
     cities_list = Set([])
     states_list = Set([])
+    venue_list = Set([])
     event_blocks = []
     for event in list_of_events:
-        print(event)
         with open(event_loc + event) as event_file:
             ev_json = json.load(event_file)
             ev_id = ev_json["id"]
@@ -126,6 +126,7 @@ if __name__ == "__main__":
             ev_state = ev_json["place"]["location"]["state"]
             states_list.add(ev_state)
             ev_venue = ev_json["place"]["name"]
+            venue_list.add(ev_venue)
             event_blocks.append(create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, ev_id, ev_priority))
 
         event_file.close()
@@ -136,8 +137,10 @@ if __name__ == "__main__":
         #turn sets into alphabetical lists
         cities_sorted = sorted(cities_list)
         states_sorted = sorted(states_list)
+        venues_sorted = sorted(venue_list)
         #write the filter bar
         new_index.write(create_city_filter(cities_sorted))
+        #start the event block
         new_index.write(event_block_beginning)
         for event in event_blocks:
             new_index.write(event)
