@@ -4,6 +4,8 @@ import sys
 import os
 from sets import Set
 
+import utils
+
 def get_event_link_html(event_id):
     event_link = "    <p><a href=\"view_event.html?event_id=" + event_id + "\"> "
     event_link += event_id + " </a></p>\n"
@@ -62,17 +64,8 @@ def create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, e
    return return_html
 
 if __name__ == "__main__":
-    #get document header from template
-    doc_head = ""
-    with open("templates/doc_head.txt") as head:
-        doc_head = head.read()
-    head.close()
-    #get document footer from template
-    doc_foot = ""
-    with open("templates/doc_foot.txt") as foot:
-        doc_foot = foot.read()
-    foot.close()
-        
+    doc_head = utils.get_header()
+    doc_foot = utils.get_footer()
     event_loc = "jsondump/"
     list_of_events = os.listdir(event_loc)
     events_html = ""
