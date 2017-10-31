@@ -23,3 +23,9 @@ def get_footer():
     foot.close()
     return doc_foot
 
+def get_event_list(event_list_disk):
+    event_list = {}
+    with open(event_list_disk, 'r') as event_list_file:
+        event_list = event_list_file.read().splitlines()
+    event_list_file.close()
+    return event_list
