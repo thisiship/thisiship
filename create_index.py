@@ -6,10 +6,19 @@ from sets import Set
 
 import utils
 
-def get_event_link_html(event_id):
-    event_link = "    <p><a href=\"view_event.html?event_id=" + event_id + "\"> "
-    event_link += event_id + " </a></p>\n"
-    return event_link
+tag_name = "name"
+tag_start = "start_time"
+tag_end = "end-time"
+tag_prio = "priority"
+tag_id = "id"
+tag_desc = "description"
+tag_place = "place"
+tag_loc = "location"
+tag_city = "city"
+tag_state = "state"
+#note: the venue tag in the data is at place -> name. this is use for ev_data key
+tag_venue = "venue"
+none_specified = "None Specified"
 
 def create_city_filter(cities_list):
     start_html = """
@@ -43,27 +52,42 @@ event_block_end = """
         </div>
     </div>
 """
-def create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, ev_id, ev_priority):
+def create_event_block(ev_data):
    return_html = """
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name">%s</h3>
+                        <h4 class="event_name"> %s </h3>
                         <p class="date">
-                            <span class="start_date">%s</span> - <span class="end_date">%s</span>
+                            <span class="start_date"> %s </span> - <span class="end_date"> %s </span>
                         </p>
                         <p class="location"> 
-                            <span class="city">%s</span>, <span class="state">%s</span>
+                            <span class="city"> %s </span>, <span class="state"> %s </span>
                         </p>
                         <p class="venue"> %s </p>
-                        <p><a href="view_event.html?event_id=%s" class="btn btn-primary" role="button"> Details </a></p>
                         <div hidden class="priority"> %s </div>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-%s">View Details</button>
+                        <div class="modal fade" id="modal-%s" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title"> %s </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p><a href="http://www.facebook.com/events/%s" class="btn btn-primary" role="button" target="_blank"> Facebook Event </a></p>
+                                        <p> %s </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-   """ % (ev_name,ev_start,ev_end,ev_city,ev_state,ev_venue,ev_id,ev_priority)
+   """ % (ev_data[tag_name],ev_data[tag_start],ev_data[tag_end],ev_data[tag_city],ev_data[tag_state],ev_data[tag_venue],ev_data[tag_prio],ev_data[tag_id],ev_data[tag_id],ev_data[tag_name],ev_data[tag_id],ev_data[tag_desc])
 
    return return_html
+
 
 if __name__ == "__main__":
     doc_head = utils.get_header()
@@ -83,30 +107,36 @@ if __name__ == "__main__":
         with open(event_loc + event) as event_file:
             ev_json = json.load(event_file)
 
-            ev_id = ev_json["id"]
-            ev_start = ev_json["start_time"]
-            ev_name = ev_json["name"]
-            ev_priority = ev_json["priority"]
+            ev_id = ev_json[tag_id]
+            ev_start = ev_json[tag_start]
+            ev_name = ev_json[tag_name]
+            ev_priority = ev_json[tag_prio]
 
-            ev_end = "None Specified"
-            if "end_time" in ev_json:
-                ev_end = ev_json["end_time"]
+            ev_end = none_specified
+            if tag_end in ev_json:
+                ev_end = ev_json[tag_end]
+            
+            ev_desc = none_specified
+            if tag_desc in ev_json:
+                ev_desc = ev_json[tag_desc]
 
-            ev_city = "None Specified"
-            ev_state = "None Specified"
-            ev_venue = "None Specified"
-            if "place" in ev_json:
-                if "location" in ev_json["place"]:
-                    if "city" in ev_json["place"]["location"]:
-                        ev_city = ev_json["place"]["location"]["city"]
+            ev_city = none_specified
+            ev_state = none_specified
+            ev_venue = none_specified
+            if tag_place in ev_json:
+                if tag_loc in ev_json[tag_place]:
+                    if tag_city in ev_json[tag_place][tag_loc]:
+                        ev_city = ev_json[tag_place][tag_loc][tag_city]
                         cities_list.add(ev_city)
-                    if "state" in ev_json["place"]["location"]:
-                        ev_state = ev_json["place"]["location"]["state"]
+                    if tag_state in ev_json[tag_place][tag_loc]:
+                        ev_state = ev_json[tag_place][tag_loc][tag_state]
                         states_list.add(ev_state)
-                    if "name" in ev_json["place"]:
-                        ev_venue = ev_json["place"]["name"]
+                    if tag_name in ev_json[tag_place]:
+                        #note: venue lives at place -> name
+                        ev_venue = ev_json[tag_place][tag_name]
                         venue_list.add(ev_venue)
-            event_blocks.append(create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, ev_id, ev_priority))
+            ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc}
+            event_blocks.append(create_event_block(ev_data))
 
         event_file.close()
 
@@ -122,7 +152,7 @@ if __name__ == "__main__":
         #start the event block
         new_index.write(event_block_beginning)
         for event in event_blocks:
-            new_index.write(event)
+            new_index.write(event.encode('utf-8'))
         new_index.write(event_block_end)
         new_index.write(doc_foot)
     new_index.close()
