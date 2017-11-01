@@ -8,7 +8,7 @@ import utils
 
 tag_name = "name"
 tag_start = "start_time"
-tag_end = "end-time"
+tag_end = "end_time"
 tag_prio = "priority"
 tag_id = "id"
 tag_desc = "description"
@@ -87,19 +87,9 @@ def create_event_block(ev_data):
    """ % (ev_data[tag_name],ev_data[tag_start],ev_data[tag_end],ev_data[tag_city],ev_data[tag_state],ev_data[tag_venue],ev_data[tag_prio],ev_data[tag_id],ev_data[tag_id],ev_data[tag_id],ev_data[tag_name],ev_data[tag_desc])
 
    return return_html
-
-
-if __name__ == "__main__":
-    doc_head = utils.get_header()
-    doc_foot = utils.get_footer()
-    event_loc = "jsondump/"
-    index_loc = "index.html"
-    list_of_events = os.listdir(event_loc)
-    events_html = ""
-    cities_list = Set([])
-    states_list = Set([])
-    venue_list = Set([])
-    event_blocks = []
+def create_event_dict(events_loc):
+    event_dict = {}
+    list_of_events = os.listdir(events_loc)
     for event in list_of_events:
         #the only things an event is required to have are:
         #   id 
@@ -128,32 +118,58 @@ if __name__ == "__main__":
                 if tag_loc in ev_json[tag_place]:
                     if tag_city in ev_json[tag_place][tag_loc]:
                         ev_city = ev_json[tag_place][tag_loc][tag_city]
-                        cities_list.add(ev_city)
                     if tag_state in ev_json[tag_place][tag_loc]:
                         ev_state = ev_json[tag_place][tag_loc][tag_state]
-                        states_list.add(ev_state)
                     if tag_name in ev_json[tag_place]:
                         #note: venue lives at place -> name
                         ev_venue = ev_json[tag_place][tag_name]
-                        venue_list.add(ev_venue)
             ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc}
-            event_blocks.append(create_event_block(ev_data))
+            event_dict[ev_id] = ev_data
 
         event_file.close()
+    return event_dict
 
+def get_ordered_event_list(event_dict):
+    ordered_list = []
+    #this is super complicated
+    #the time thing- split the time by T and take the first part, which is YYYY-MM-DD
+    #this is so it categorizes by day and not time of day. Priority would only work if the time was exact as well
+    #   tuple in        get tuples                     order by    start_time then prio then name
+    for ev_id in sorted(event_dict.iteritems(), key=lambda (k,v): (v[tag_start].split('T')[0],v[tag_prio],v[tag_name])):
+        #ev_id is the tuple (ev_id, actual event dict)
+        ordered_list.append(ev_id[1])
+    return ordered_list
 
+if __name__ == "__main__":
+    doc_head = utils.get_header()
+    doc_foot = utils.get_footer()
+    event_loc = "jsondump/"
+    index_loc = "index.html"
+    event_dict = create_event_dict(event_loc)
+    events_ordered = get_ordered_event_list(event_dict)
+    print(events_ordered)
+    event_blocks = []
+    for event in events_ordered:
+        event_blocks.append(create_event_block(event).encode('utf-8'))
+
+    cities = set()
+    states = set()
+    venues = set()
+    #get all cities, states, venues for filtering purposes
+    for event in event_dict:
+        cities.add(event_dict[event][tag_city])
+        states.add(event_dict[event][tag_state])
+        venues.add(event_dict[event][tag_venue])
+        
+    cities_sorted = sorted(cities)
     with open (index_loc, 'w') as new_index:
         new_index.write(doc_head)
-        #turn sets into alphabetical lists
-        cities_sorted = sorted(cities_list)
-        states_sorted = sorted(states_list)
-        venues_sorted = sorted(venue_list)
         #write the filter bar
         new_index.write(create_city_filter(cities_sorted))
         #start the event block
         new_index.write(event_block_beginning)
-        for event in event_blocks:
-            new_index.write(event.encode('utf-8'))
+        for block in event_blocks:
+            new_index.write(block)
         new_index.write(event_block_end)
         new_index.write(doc_foot)
     new_index.close()
