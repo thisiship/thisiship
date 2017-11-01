@@ -93,6 +93,7 @@ if __name__ == "__main__":
     doc_head = utils.get_header()
     doc_foot = utils.get_footer()
     event_loc = "jsondump/"
+    index_loc = "index.html"
     list_of_events = os.listdir(event_loc)
     events_html = ""
     cities_list = Set([])
@@ -141,7 +142,7 @@ if __name__ == "__main__":
         event_file.close()
 
 
-    with open ("index.html",'w') as new_index:
+    with open (index_loc, 'w') as new_index:
         new_index.write(doc_head)
         #turn sets into alphabetical lists
         cities_sorted = sorted(cities_list)
