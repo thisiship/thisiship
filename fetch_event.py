@@ -18,11 +18,9 @@ if __name__ == "__main__":
     event_list_disk = "event_list.txt"
     jsondump_loc = "jsondump/"
     graph = get_facebook_graph()
-    print("Got graph")
-    event_list = utils.get_event_list(event_list_disk); 
+    event_list = set(utils.get_event_list(event_list_disk))
     for event_id in event_list:
         if (event_id is not None and event_id != ""):
-            print(event_id)
             fb_event = get_event_info(graph, event_id)
             new_file_name = jsondump_loc  + event_id + '.json'
             #events have default priority 0
