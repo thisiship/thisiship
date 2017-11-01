@@ -67,6 +67,7 @@ def create_event_block(ev_data):
                         <p class="venue"> %s </p>
                         <div hidden class="priority"> %s </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-%s">View Details</button>
+                        <a href="http://www.facebook.com/events/%s" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
                         <div class="modal fade" id="modal-%s" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -75,7 +76,6 @@ def create_event_block(ev_data):
                                         <h4 class="modal-title"> %s </h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p><a href="http://www.facebook.com/events/%s" class="btn btn-primary" role="button" target="_blank"> Facebook Event </a></p>
                                         <p> %s </p>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ def create_event_block(ev_data):
                     </div>
                 </div>
             </div>
-   """ % (ev_data[tag_name],ev_data[tag_start],ev_data[tag_end],ev_data[tag_city],ev_data[tag_state],ev_data[tag_venue],ev_data[tag_prio],ev_data[tag_id],ev_data[tag_id],ev_data[tag_name],ev_data[tag_id],ev_data[tag_desc])
+   """ % (ev_data[tag_name],ev_data[tag_start],ev_data[tag_end],ev_data[tag_city],ev_data[tag_state],ev_data[tag_venue],ev_data[tag_prio],ev_data[tag_id],ev_data[tag_id],ev_data[tag_id],ev_data[tag_name],ev_data[tag_desc])
 
    return return_html
 
