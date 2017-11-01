@@ -12,16 +12,18 @@ def get_event_link_html(event_id):
     return event_link
 
 def create_city_filter(cities_list):
-    start_html =     """
-        <div class="container">
-	    <div class="panel">
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                            <select class="form-control city-filter">
-                                <option selected="selected">All Cities</option>"""
+    start_html = """
+    <div class="container">
+	<div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                        <select class="form-control city-filter">
+                            <option selected="selected">All Cities</option>"""
     end_html = """
-                </select>
+                        </select>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -29,7 +31,7 @@ def create_city_filter(cities_list):
     return_html = start_html
     for city in cities_list:
         return_html += """
-                    <option>""" + city + "</option>" 
+                            <option>""" + city + "</option>" 
     return_html += end_html
     return return_html
 event_block_beginning = """
@@ -74,22 +76,36 @@ if __name__ == "__main__":
     venue_list = Set([])
     event_blocks = []
     for event in list_of_events:
+        #the only things an event is required to have are:
+        #   id 
+        #   start_time
+        #   name
         with open(event_loc + event) as event_file:
             ev_json = json.load(event_file)
+
             ev_id = ev_json["id"]
-            event_link = get_event_link_html(ev_id)
             ev_start = ev_json["start_time"]
+            ev_name = ev_json["name"]
+            ev_priority = ev_json["priority"]
+
             ev_end = "None Specified"
             if "end_time" in ev_json:
                 ev_end = ev_json["end_time"]
-            ev_name = ev_json["name"]
-            ev_priority = ev_json["priority"]
-            ev_city = ev_json["place"]["location"]["city"]
-            cities_list.add(ev_city)
-            ev_state = ev_json["place"]["location"]["state"]
-            states_list.add(ev_state)
-            ev_venue = ev_json["place"]["name"]
-            venue_list.add(ev_venue)
+
+            ev_city = "None Specified"
+            ev_state = "None Specified"
+            ev_venue = "None Specified"
+            if "place" in ev_json:
+                if "location" in ev_json["place"]:
+                    if "city" in ev_json["place"]["location"]:
+                        ev_city = ev_json["place"]["location"]["city"]
+                        cities_list.add(ev_city)
+                    if "state" in ev_json["place"]["location"]:
+                        ev_state = ev_json["place"]["location"]["state"]
+                        states_list.add(ev_state)
+                    if "name" in ev_json["place"]:
+                        ev_venue = ev_json["place"]["name"]
+                        venue_list.add(ev_venue)
             event_blocks.append(create_event_block(ev_name, ev_start, ev_end, ev_city, ev_state, ev_venue, ev_id, ev_priority))
 
         event_file.close()
