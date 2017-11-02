@@ -23,7 +23,7 @@ none_specified = "None Specified"
 def create_city_filter(cities_list):
     start_html = """
     <div class="container">
-	<div class="panel">
+        <div class="panel">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
@@ -147,7 +147,6 @@ if __name__ == "__main__":
     index_loc = "index.html"
     event_dict = create_event_dict(event_loc)
     events_ordered = get_ordered_event_list(event_dict)
-    print(events_ordered)
     event_blocks = []
     for event in events_ordered:
         event_blocks.append(create_event_block(event).encode('utf-8'))
