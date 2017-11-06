@@ -102,7 +102,7 @@ def create_event_block(ev_data):
                             <span class="start_date"> %s </span> - <span class="end_date"> %s </span>
                         </p>
                         <p class="location"> 
-                            <span class="city"> %s </span>, <span class="state"> %s </span>
+                            <span class="city">%s</span>, <span class="state">%s</span>
                         </p>
                         <p class="venue"> %s </p>
                         <div hidden class="priority"> %s </div>
