@@ -23,8 +23,8 @@ if __name__ == "__main__":
         if (event_id is not None and event_id != ""):
             fb_event = get_event_info(graph, event_id)
             new_file_name = jsondump_loc  + event_id + '.json'
-            #events have default priority 0
-            event_priority = "0"
+            #events have default priority 9
+            event_priority = "9"
 
             if (os.path.exists(new_file_name)):
                 print("Event %s exists. Saving priority." % new_file_name)
