@@ -1,18 +1,54 @@
 $(document).ready(function() {
-	// filter on city
-	$(".city-filter").change(function() {
+	$("#filter-submit").click(function() {
 		var event_tags = $(".event");
-		var option = "";
+		filter_option = {};
 		$(".city-filter option:selected").each(function() {
-			option = $(this).text().trim();
+			city = $(this).text().trim();
+			if (city !== "All Cities") {
+				filter_option.city = city;
+			}
 		});
-		console.log(option);
-		if (option === "All Cities") {
-			event_tags.show();
-		} else {
+
+		$(".state-filter option:selected").each(function() {
+			state = $(this).text().trim();
+			if (state !== "All States") {
+				filter_option.state = state;
+			}
+		});
+
+		$(".venue-filter option:selected").each(function() {
+			venue = $(this).text().trim();
+			if (venue !== "All Venues") {
+				filter_option.venue = venue;
+			}
+		});
+		// if there is anything to filter on
+		if (Object.keys(filter_option).length > 0) {
 			event_tags.hide();
-			var matching = ".city:contains(" + option + ")";
-			$(matching).closest('.event').show();
+			event_tags.each(function() {
+				city_match = true;
+				state_match = true;
+				venue_match = true;
+				var $this = $(this);
+				if ("city" in filter_option) {
+					city_match = $this.find(".city").text().trim() === filter_option.city; 
+				}
+
+				if ("state" in filter_option) {
+					state_match = $this.find(".state").text().trim() === filter_option.state;
+				}
+
+				if ("venue" in filter_option) {
+					venue_match = $this.find(".venue").text().trim() === filter_option.venue;
+				}
+
+				if (city_match && state_match && venue_match) {
+					$(this).show();
+				}
+			});
+		} else {
+			// this means all the filters are on "All X"
+			event_tags.show();
 		}
 	});
 });

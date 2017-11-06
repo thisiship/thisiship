@@ -20,22 +20,29 @@ tag_state = "state"
 tag_venue = "venue"
 none_specified = "None Specified"
 
-def create_city_filter(cities_list):
-    start_html = """
+filters_start_html = """
     <div class="container">
         <div class="panel">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                        <select class="form-control city-filter">
-                            <option selected="selected">All Cities</option>"""
-    end_html = """
-                        </select>
+"""
+filters_end_html = """
+                    <div class="col-xs-3">
+                        <button type="button" id="filter-submit" class="btn btn-primary">Filter</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+"""
+def create_city_filter(cities_list):
+    start_html = """
+                    <div class="col-xs-3">
+                        <select class="form-control city-filter">
+                            <option selected="selected">All Cities</option>"""
+    end_html = """
+                        </select>
+                    </div>
     """
     return_html = start_html
     for city in cities_list:
@@ -43,6 +50,39 @@ def create_city_filter(cities_list):
                             <option>""" + city + "</option>" 
     return_html += end_html
     return return_html
+
+def create_state_filter(states_list):
+    start_html = """
+                    <div class="col-xs-3">
+                        <select class="form-control state-filter">
+                            <option selected="selected">All States</option>"""
+    end_html = """
+                        </select>
+                    </div>
+    """
+    return_html = start_html
+    for state in states_list:
+        return_html += """
+                            <option>""" + state + "</option>" 
+    return_html += end_html
+    return return_html
+
+def create_venue_filter(venues_list):
+    start_html = """
+                    <div class="col-xs-3">
+                        <select class="form-control venue-filter">
+                            <option selected="selected">All Venues</option>"""
+    end_html = """
+                        </select>
+                    </div>
+    """
+    return_html = start_html
+    for venue in venues_list:
+        return_html += """
+                            <option>""" + venue + "</option>" 
+    return_html += end_html
+    return return_html
+
 event_block_beginning = """
     
     <!-- events -->
@@ -161,10 +201,16 @@ if __name__ == "__main__":
         venues.add(event_dict[event][tag_venue])
         
     cities_sorted = sorted(cities)
+    states_sorted = sorted(states)
+    venues_sorted = sorted(venues)
     with open (index_loc, 'w') as new_index:
         new_index.write(doc_head)
         #write the filter bar
+        new_index.write(filters_start_html)
         new_index.write(create_city_filter(cities_sorted))
+        new_index.write(create_state_filter(states_sorted))
+        new_index.write(create_venue_filter(venues_sorted))
+        new_index.write(filters_end_html)
         #start the event block
         new_index.write(event_block_beginning)
         for block in event_blocks:
