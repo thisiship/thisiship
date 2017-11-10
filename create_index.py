@@ -128,7 +128,7 @@ def create_event_block(ev_data):
                                     <span class="year">{start_year}</span>
                                 </p>
                                 <p>
-                                    <span class="time">at {start_time}</span>
+                                    <span class="time">{start_time}</span>
                                 </p>
                             </div>
                         </div>
@@ -149,13 +149,13 @@ def create_event_block(ev_data):
 					    <div class="start_date">
                                                 <span class="weekday">{start_weekday}, </span>
 						<span class="month">{start_month_name} </span><span class="day">{start_day}, </span><span class="year">{start_year}</span>
-						<span class="time">at {start_time}</span>"""
+						<span class="time">{start_time}</span>"""
     if (ev_data[tag_end] != NONE_SPECIFIED):
         modal_html +="""
 					        -
                                                 <span class="weekday">{end_weekday}, </span>
 						<span class="month">{end_month_name} </span><span class="day">{end_day}, </span><span class="year">{end_year}</span>
-						<span class="time">at {end_time}</span>"""
+						<span class="time">{end_time}</span>"""
     modal_html +="""
 					    </div>
 					</h6>
