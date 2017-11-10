@@ -31,9 +31,9 @@
             <div class="panel-body">
                 <div class="row">
 
-                    <div class="col-xs-3">
-                        <select class="form-control city-filter">
-                            <option selected="selected">All Cities</option>
+                    <div class="col-xs-4 col-sm-2">
+                        <select id="city-filter" class="form-control filter-master">
+                            <option value="0" selected="selected">All Cities</option>
                             <option>Buffalo</option>
                             <option>Erie</option>
                             <option>Geneva</option>
@@ -46,18 +46,18 @@
                         </select>
                     </div>
     
-                    <div class="col-xs-3">
-                        <select class="form-control state-filter">
-                            <option selected="selected">All States</option>
+                    <div class="col-xs-4 col-sm-2">
+                        <select id="state-filter" class="form-control filter-master">
+                            <option value="0" selected="selected">All States</option>
                             <option>NY</option>
                             <option>PA</option>
                             <option>VT</option>
                         </select>
                     </div>
     
-                    <div class="col-xs-3">
-                        <select class="form-control venue-filter">
-                            <option selected="selected">All Venues</option>
+                    <div class="col-xs-4 col-sm-2">
+                        <select id="venue-filter" class="form-control filter-master">
+                            <option value="0" selected="selected">All Venues</option>
                             <option>ANTHOLOGY</option>
                             <option>Abilene Bar and Lounge</option>
                             <option>Bop Shop Records</option>
@@ -83,7 +83,10 @@
                         </select>
                     </div>
     
-                    <div class="col-xs-3">
+                    <div class="col-xs-2 col-sm-1">
+                        <button type="button" id="filter-reset" class="btn btn-primary">Reset</button>
+                    </div>
+                    <div class="col-xs-2 col-sm-1">
                         <button type="button" id="filter-submit" class="btn btn-primary">Filter</button>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">10, </span>
                                     <span class="year">2017</span>
@@ -118,19 +121,22 @@
                         <p class="venue"> Town Ballroom </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-811616282349538">View Details</button>
-                        <a href="http://www.facebook.com/events/811616282349538" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-811616282349538" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/811616282349538" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-811616282349538" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Wood Brothers at Town Ballroom </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">10, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">10, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Wood Brothers at Town Ballroom </p>
@@ -148,7 +154,7 @@
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">November </span>
                                     <span class="day">11, </span>
                                     <span class="year">2017</span>
@@ -164,23 +170,28 @@
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-359572561131413">View Details</button>
-                        <a href="http://www.facebook.com/events/359572561131413" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-359572561131413" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/359572561131413" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-359572561131413" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Bardic Vengeance Debuts at 3HB </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">11, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">11, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">11, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">11, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> This is the 1st live performance of Bardic Vengeance. We are excited to bring new original Music to the people of Rochester </p>
@@ -198,7 +209,7 @@
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Monday, </span>
+                                    <span class="weekday">Monday, </span>
                                     <span class="month">November </span>
                                     <span class="day">13, </span>
                                     <span class="year">2017</span>
@@ -214,23 +225,28 @@
                         <p class="venue"> ButaPub </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-311138319373568">View Details</button>
-                        <a href="http://www.facebook.com/events/311138319373568" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-311138319373568" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/311138319373568" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-311138319373568" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Roc City Pro Jam! </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Monday, </span>
-						<span class="month">November </span><span class="day">13, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">13, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Tuesday, </span>
-						<span class="month">November </span><span class="day">14, </span><span class="year">2017</span>
-						<span class="time">12:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">14, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">12:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Special guests Wil McKenna and Tony Gallicchio of “The Medicinals” will stop the world and melt your face while you shake your sweet patootie like it was your sacred duty! Hollywood and Heins present what might be the 777th edition of the Roc City Pro Jam. 
@@ -252,7 +268,7 @@ Peace ~ Bless Up! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Tuesday, </span>
+                                    <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
@@ -268,19 +284,22 @@ Peace ~ Bless Up! </p>
                         <p class="venue"> Casita Del Polaris </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1522010691221041">View Details</button>
-                        <a href="http://www.facebook.com/events/1522010691221041" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1522010691221041" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1522010691221041" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1522010691221041" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Dubbest w/ Matthew O’Brian of Thunder Body </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Tuesday, </span>
-						<span class="month">November </span><span class="day">14, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">14, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> 18+
@@ -306,7 +325,7 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Wednesday, </span>
+                                    <span class="weekday">Wednesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">15, </span>
                                     <span class="year">2017</span>
@@ -322,19 +341,22 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <p class="venue"> The Dock </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307516323036494">View Details</button>
-                        <a href="http://www.facebook.com/events/307516323036494" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-307516323036494" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/307516323036494" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-307516323036494" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Reggae Night with The Crucial Reggae Social Club at The Dock </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Wednesday, </span>
-						<span class="month">November </span><span class="day">15, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">15, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Reggae Night with The Crucial Reggae Social Club at The Dock - Ithaca </p>
@@ -352,7 +374,7 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
@@ -368,23 +390,28 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <p class="venue"> Bop Shop Records </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1800372256642619">View Details</button>
-                        <a href="http://www.facebook.com/events/1800372256642619" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1800372256642619" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1800372256642619" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1800372256642619" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Spotlight: Lost Wax </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">November </span><span class="day">16, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">November </span><span class="day">16, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> FREE SHOW! The finale of SEASON FOUR of the Rochester Indie Musician Spotlight features Lost Wax Collective! Each concert at Bop Shop Records and Bernunzio Uptown Music will feature a ten-to-fifteen minute interview with the guest, then a 45 minute set.
@@ -404,7 +431,7 @@ Lost Wax Collective is led by drummer extraordinaire Brendon Caroselli, and feat
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
@@ -420,23 +447,28 @@ Lost Wax Collective is led by drummer extraordinaire Brendon Caroselli, and feat
                         <p class="venue"> Flour City Station </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-319945968473561">View Details</button>
-                        <a href="http://www.facebook.com/events/319945968473561" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-319945968473561" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/319945968473561" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-319945968473561" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Thursday Heater feat After Funk, Tweed, MoChester, Joey Harkum + </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">November </span><span class="day">16, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">17, </span><span class="year">2017</span>
-						<span class="time">12:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">12:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Come join us for our 1st monthly "Thursday Heater".  To help celebrate we are bringing in some incredible musicians.  The following bands will perform:
@@ -464,7 +496,7 @@ Tix: $7.50 adv // $10 dos
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
@@ -480,19 +512,22 @@ Tix: $7.50 adv // $10 dos
                         <p class="venue"> MoJo's </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1968594703419509">View Details</button>
-                        <a href="http://www.facebook.com/events/1968594703419509" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1968594703419509" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1968594703419509" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1968594703419509" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project at Mojo's Soul Night </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">17, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Based out of Western NY, The English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and  improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. Their debut EP, “The English Project, Vol.1” is scheduled to release this DECEMBER. </p>
@@ -510,7 +545,7 @@ Tix: $7.50 adv // $10 dos
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
@@ -526,23 +561,28 @@ Tix: $7.50 adv // $10 dos
                         <p class="venue"> Higher Ground </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1865172397143702">View Details</button>
-                        <a href="http://www.facebook.com/events/1865172397143702" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1865172397143702" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1865172397143702" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1865172397143702" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Blind Owl Band / Higher Ground / Burlington, VT </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">17, </span><span class="year">2017</span>
-						<span class="time">8:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">18, </span><span class="year">2017</span>
-						<span class="time">1:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">18, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">1:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Blind Owl Band 
@@ -575,7 +615,7 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
@@ -591,23 +631,28 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <p class="venue"> Abilene Bar and Lounge </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-124583954879317">View Details</button>
-                        <a href="http://www.facebook.com/events/124583954879317" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-124583954879317" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/124583954879317" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-124583954879317" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Buffalo Brass Machine w/ Ruckus Juice Jug Stompers </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">17, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">18, </span><span class="year">2017</span>
-						<span class="time">1:30AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">18, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">1:30AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The party returns to Rochester on 11/17 at 9PM as The Buffalo Brass Machine partners up with Ruckus Juice Jug Stompers for a wild show! Come dance and let your wild side out all night as the sounds of NOLA rock your world! Tickets are $8! </p>
@@ -625,7 +670,7 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Tuesday, </span>
+                                    <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">21, </span>
                                     <span class="year">2017</span>
@@ -641,19 +686,22 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <p class="venue"> Funk 'n Waffles Music Hall </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1783146791983528">View Details</button>
-                        <a href="http://www.facebook.com/events/1783146791983528" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1783146791983528" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1783146791983528" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1783146791983528" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Yellowman & The Sagittarius Band w/s/g Root Shock </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Tuesday, </span>
-						<span class="month">November </span><span class="day">21, </span><span class="year">2017</span>
-						<span class="time">8:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">21, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> $15 Adv/ $20 Dos / Age 18 And Up
@@ -676,7 +724,7 @@ http://www.ticketweb.com/fb/7783065/funknwaffles </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Wednesday, </span>
+                                    <span class="weekday">Wednesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">22, </span>
                                     <span class="year">2017</span>
@@ -692,23 +740,28 @@ http://www.ticketweb.com/fb/7783065/funknwaffles </p>
                         <p class="venue"> FLX Live </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286992075126241">View Details</button>
-                        <a href="http://www.facebook.com/events/286992075126241" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-286992075126241" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/286992075126241" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-286992075126241" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Aaron Lipp & Slacktones wsg A Girl Named Genny </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Wednesday, </span>
-						<span class="month">November </span><span class="day">22, </span><span class="year">2017</span>
-						<span class="time">8:00AM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">22, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00AM</span>
+                                                -
                                                 <span class="weekday">Wednesday, </span>
-						<span class="month">November </span><span class="day">22, </span><span class="year">2017</span>
-						<span class="time">11:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">22, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> We are thrilled to bring back the fantastic rockabilly sounds of Aaron Lipp & The Slack Tones, with very special guests Rochester based, high energy americana folk rock act, A Girl Named Genny. For this show the Slack Tones will be joined by fiddle master, Duncan Wickel, to round out the 4 piece band. 
@@ -734,7 +787,7 @@ We will celebrate the oncoming season and the end of the harvest with fantastic 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
@@ -750,23 +803,28 @@ We will celebrate the oncoming season and the end of the harvest with fantastic 
                         <p class="venue"> Flour City Station </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-297728537370262">View Details</button>
-                        <a href="http://www.facebook.com/events/297728537370262" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-297728537370262" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/297728537370262" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-297728537370262" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Danksgiving w/ The Medicinals, Bead N' Bone ft. Kevin Kinsella, Dj 2-Way </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">25, </span><span class="year">2017</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">25, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> DANKSGIVING. A Classic Funky Reggae Party. One Night Only.  Run for Cover.
@@ -806,7 +864,7 @@ Special guests abound all night so stay tuned!!! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
@@ -822,23 +880,28 @@ Special guests abound all night so stay tuned!!! </p>
                         <p class="venue"> The California Brew Haus </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-299652390515275">View Details</button>
-                        <a href="http://www.facebook.com/events/299652390515275" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-299652390515275" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/299652390515275" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-299652390515275" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> PA Line at The California Brew Haus </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">25, </span><span class="year">2017</span>
-						<span class="time">10:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">25, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">10:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> We are excited and pleased to have PA Line at the Brew Haus the day after thanksgiving!!! They'll be preforming two amazing sets for your enjoyment!
@@ -860,7 +923,7 @@ Don't miss the fun!!!! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
@@ -876,23 +939,28 @@ Don't miss the fun!!!! </p>
                         <p class="venue"> The Westcott Theater </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-819537324894427">View Details</button>
-                        <a href="http://www.facebook.com/events/819537324894427" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-819537324894427" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/819537324894427" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-819537324894427" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Root Shock, Danielle Ponder, and Spring Street @westcott!! </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">11:59PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:59PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Tickets :: http://thewestcotttheater.com/event.cfm?id=269523&cart
@@ -922,7 +990,7 @@ Tickets are ON SALE NOW on thewestcotttheater.com and at the Sound Garden in Arm
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
@@ -938,23 +1006,28 @@ Tickets are ON SALE NOW on thewestcotttheater.com and at the Sound Garden in Arm
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-125469171549820">View Details</button>
-                        <a href="http://www.facebook.com/events/125469171549820" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-125469171549820" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/125469171549820" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-125469171549820" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Upward Groove at Three Heads </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">November </span><span class="day">24, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">24, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Upward Groove is a band that has been taking the scene by storm.  They have an upbeat sound and are fronted by our good buddy you might recognize from behind the bar, Eli Flynn.  
@@ -978,7 +1051,7 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">November </span>
                                     <span class="day">25, </span>
                                     <span class="year">2017</span>
@@ -994,23 +1067,28 @@ Event photo by Empire West Photo </p>
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-295817580921765">View Details</button>
-                        <a href="http://www.facebook.com/events/295817580921765" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-295817580921765" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/295817580921765" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-295817580921765" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Tony G's Funky Holiday Spectacular </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">25, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">November </span>
+                                                <span class="day">25, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">November </span><span class="day">25, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">25, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Anthony Gallacchio, a.k.a. Tony G, was rumored to have been born playing a Moog.  We are not sure if that is true, but we are also not going to doubt it.  
@@ -1040,7 +1118,7 @@ Event photo by Aaron Winters </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Tuesday, </span>
+                                    <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">28, </span>
                                     <span class="year">2017</span>
@@ -1056,19 +1134,22 @@ Event photo by Aaron Winters </p>
                         <p class="venue"> Funk 'n Waffles Music Hall </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2008065026129034">View Details</button>
-                        <a href="http://www.facebook.com/events/2008065026129034" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-2008065026129034" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/2008065026129034" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-2008065026129034" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Dead Night with Roc and Rye Band </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Tuesday, </span>
-						<span class="month">November </span><span class="day">28, </span><span class="year">2017</span>
-						<span class="time">8:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">28, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> $5 / Age 18 And Up
@@ -1089,7 +1170,7 @@ http://www.ticketweb.com/fb/7771495/funknwaffles </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">30, </span>
                                     <span class="year">2017</span>
@@ -1105,19 +1186,22 @@ http://www.ticketweb.com/fb/7771495/funknwaffles </p>
                         <p class="venue"> Funk 'n Waffles Music Hall </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1982125085334265">View Details</button>
-                        <a href="http://www.facebook.com/events/1982125085334265" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1982125085334265" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1982125085334265" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1982125085334265" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Root Shock w/s/g The Saplings </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">November </span><span class="day">30, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">November </span>
+                                                <span class="day">30, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> $10 / Age 18 And Up
@@ -1140,7 +1224,7 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
@@ -1156,23 +1240,28 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
                         <p class="venue"> ANTHOLOGY </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-164429860777995">View Details</button>
-                        <a href="http://www.facebook.com/events/164429860777995" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-164429860777995" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/164429860777995" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-164429860777995" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Jazz Is PHSH in Rochester NY </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">11:59PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:59PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> JAZZISPHSH, DECEMBER 1ST
@@ -1206,7 +1295,7 @@ Founded in 2015 by The Chase Brothers, Adam Chase and Matthew Chase, JAZZ IS PHS
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
@@ -1222,23 +1311,28 @@ Founded in 2015 by The Chase Brothers, Adam Chase and Matthew Chase, JAZZ IS PHS
                         <p class="venue"> The Little Theatre </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1724225011220002">View Details</button>
-                        <a href="http://www.facebook.com/events/1724225011220002" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1724225011220002" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1724225011220002" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1724225011220002" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Danielle Ponder & The Tomorrow People Live at the Little Theatre </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">10:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">10:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Last years sold out visual concert is back by popular demand.
@@ -1268,7 +1362,7 @@ https://omniwebticketing.com/the-little/?schdate=2017-12-01&film=880999698&ptime
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
@@ -1284,19 +1378,22 @@ https://omniwebticketing.com/the-little/?schdate=2017-12-01&film=880999698&ptime
                         <p class="venue"> The Haunt </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1524625594270144">View Details</button>
-                        <a href="http://www.facebook.com/events/1524625594270144" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1524625594270144" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1524625594270144" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1524625594270144" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Giant Panda Guerilla Dub Squad w/ The Slack Tones at The Haunt </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">8:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> DSP Shows Presents
@@ -1332,7 +1429,7 @@ http://thehaunt.com </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
@@ -1348,23 +1445,28 @@ http://thehaunt.com </p>
                         <p class="venue"> Waterhole </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-347820062328217">View Details</button>
-                        <a href="http://www.facebook.com/events/347820062328217" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-347820062328217" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/347820062328217" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-347820062328217" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> West End Blend / Waterhole Upstairs Music Lounge / Saranac Lake </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">1, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">2, </span><span class="year">2017</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">2, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> West End Blend
@@ -1398,7 +1500,7 @@ The Blend released their debut full length record, “Rewind”, in the Fall of 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">December </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
@@ -1414,19 +1516,22 @@ The Blend released their debut full length record, “Rewind”, in the Fall of 
                         <p class="venue"> Funk 'n Waffles Downtown </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1827467874210633">View Details</button>
-                        <a href="http://www.facebook.com/events/1827467874210633" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1827467874210633" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1827467874210633" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1827467874210633" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project CD Release PARTY AT FUNK N Waffles Downtown </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">December </span><span class="day">14, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">14, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Free Show! 
@@ -1447,7 +1552,7 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">December </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
@@ -1463,23 +1568,28 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142789549695547">View Details</button>
-                        <a href="http://www.facebook.com/events/142789549695547" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-142789549695547" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/142789549695547" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-142789549695547" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Big Jazz Small Band at Three Heads </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">December </span><span class="day">14, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">14, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">December </span><span class="day">14, </span><span class="year">2017</span>
-						<span class="time">10:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">14, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">10:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> You never know what to expect with Big Jazz Small Band.  It could be jazz (d'uh), rock, poetry, etc.  
@@ -1507,7 +1617,7 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">15, </span>
                                     <span class="year">2017</span>
@@ -1523,23 +1633,28 @@ Event photo by Empire West Photo </p>
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-369233850183067">View Details</button>
-                        <a href="http://www.facebook.com/events/369233850183067" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-369233850183067" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/369233850183067" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-369233850183067" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project CD Release show </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">15, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">15, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">15, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">15, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The English Project are releasing their long awaited CD.  Since the beginning of Three Heads, Chris English has been one of our biggest musical supporters.  He has played every Homegrown we have thrown and most of our big events.  There is a simple reason why....he is amazing.  
@@ -1565,7 +1680,7 @@ $8 </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
@@ -1581,23 +1696,28 @@ $8 </p>
                         <p class="venue"> Abilene Bar and Lounge </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-144288096198242">View Details</button>
-                        <a href="http://www.facebook.com/events/144288096198242" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-144288096198242" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/144288096198242" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-144288096198242" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Crooked North wsg Tough Old Bird </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">16, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Sunday, </span>
-						<span class="month">December </span><span class="day">17, </span><span class="year">2017</span>
-						<span class="time">12:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">12:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Crooked North - 10pm
@@ -1624,7 +1744,7 @@ Doors at 7, music at 9. $7 cover </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">2, </span>
                                     <span class="year">2017</span>
@@ -1640,23 +1760,28 @@ Doors at 7, music at 9. $7 cover </p>
                         <p class="venue"> Flour City Station </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-151172035402737">View Details</button>
-                        <a href="http://www.facebook.com/events/151172035402737" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-151172035402737" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/151172035402737" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-151172035402737" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Blind Owl Band at Flour City Station with CJMG Band </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">2, </span><span class="year">2017</span>
-						<span class="time">10:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">2, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">10:00PM</span>
+                                                -
                                                 <span class="weekday">Sunday, </span>
-						<span class="month">December </span><span class="day">3, </span><span class="year">2017</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">3, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Blind Owl Band with Chris James and Mama G Band
@@ -1685,7 +1810,7 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">23, </span>
                                     <span class="year">2017</span>
@@ -1701,23 +1826,28 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-127823334570169">View Details</button>
-                        <a href="http://www.facebook.com/events/127823334570169" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-127823334570169" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/127823334570169" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-127823334570169" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Big C's Holiday Gathering </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">23, </span><span class="year">2017</span>
-						<span class="time">6:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">23, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">6:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">23, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">23, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Corey Owens is affectionately known as Big C.  He is also the guy who holds down the drums with Danielle Ponder & The Tomorrow People.  On top of that, he is the man behind Big Boy Catering, which creates some of the best food I have ever eaten.  
@@ -1745,7 +1875,7 @@ They will be on sale shortly...stay tuned. </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">29, </span>
                                     <span class="year">2017</span>
@@ -1761,19 +1891,22 @@ They will be on sale shortly...stay tuned. </p>
                         <p class="venue"> The Haunt </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-314398735693577">View Details</button>
-                        <a href="http://www.facebook.com/events/314398735693577" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-314398735693577" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/314398735693577" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-314398735693577" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> John Brown's Body </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">29, </span><span class="year">2017</span>
-						<span class="time">8:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">29, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">8:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> DSP Shows Presents John Brown's Body with very special guests THUNDER BODY at The Haunt on 12/29!!
@@ -1798,7 +1931,7 @@ Together for two decades and hailed as “Future roots, reggae, and dub with an 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">30, </span>
                                     <span class="year">2017</span>
@@ -1814,23 +1947,28 @@ Together for two decades and hailed as “Future roots, reggae, and dub with an 
                         <p class="venue"> ANTHOLOGY </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128216131161342">View Details</button>
-                        <a href="http://www.facebook.com/events/128216131161342" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-128216131161342" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/128216131161342" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-128216131161342" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Forever Party : 2 Night New Year Celebration </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">30, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">30, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Monday, </span>
-						<span class="month">January </span><span class="day">1, </span><span class="year">2018</span>
-						<span class="time">1:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">January </span>
+                                                <span class="day">1, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">1:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Celebrate the new year for 2 nights at Anthology, with an allstar lineup! Buy the 2-night ticket now for only $40 and save! 
@@ -1861,7 +1999,7 @@ The Saplings
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Sunday, </span>
+                                    <span class="weekday">Sunday, </span>
                                     <span class="month">December </span>
                                     <span class="day">31, </span>
                                     <span class="year">2017</span>
@@ -1877,19 +2015,22 @@ The Saplings
                         <p class="venue"> The Haunt </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-177168159506846">View Details</button>
-                        <a href="http://www.facebook.com/events/177168159506846" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-177168159506846" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/177168159506846" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-177168159506846" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> New Year's Eve with Driftwood </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Sunday, </span>
-						<span class="month">December </span><span class="day">31, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">31, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> DSP Shows Presents New Year's Eve with Driftwood and special guest Milkweed at The Haunt on 12/31, come ring in 2018 with us!
@@ -1946,7 +2087,7 @@ Milkweeds debut full length album, Dream of An American Family, was released in 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">8, </span>
                                     <span class="year">2017</span>
@@ -1962,23 +2103,28 @@ Milkweeds debut full length album, Dream of An American Family, was released in 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1980434252226523">View Details</button>
-                        <a href="http://www.facebook.com/events/1980434252226523" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1980434252226523" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1980434252226523" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1980434252226523" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Majestics at Three Heads </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">8, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">8, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">8, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">8, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Majestics are Rochester Roots Royalty.  They have been playing reggae since the 70s and still know how to bring it. 
@@ -2004,7 +2150,7 @@ $10 </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">8, </span>
                                     <span class="year">2017</span>
@@ -2020,23 +2166,28 @@ $10 </p>
                         <p class="venue"> Waterhole </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307590013058936">View Details</button>
-                        <a href="http://www.facebook.com/events/307590013058936" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-307590013058936" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/307590013058936" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-307590013058936" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Odd Ball Fri / Blind Owl Band / Mallett Brothers / Cactus Attack </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">December </span><span class="day">8, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">8, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">9, </span><span class="year">2017</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">9, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Odd Ball - December 8th and 9th
@@ -2080,7 +2231,7 @@ Formed in 2009 in Portland, Maine, The Mallett Brothers Band is an independent, 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">9, </span>
                                     <span class="year">2017</span>
@@ -2096,23 +2247,28 @@ Formed in 2009 in Portland, Maine, The Mallett Brothers Band is an independent, 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-162787934314771">View Details</button>
-                        <a href="http://www.facebook.com/events/162787934314771" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-162787934314771" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/162787934314771" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-162787934314771" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Folkfaces at Three Heads </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">9, </span><span class="year">2017</span>
-						<span class="time">7:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">9, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">7:00PM</span>
+                                                -
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">9, </span><span class="year">2017</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">9, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Folkfaces is a group out of Buffalo, NY that plays a rowdy blend of rootsy Folk, Jazz, and Blues - fusing classic forms with contemporary feelings and irresistibly danceable energy. 
@@ -2138,7 +2294,7 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">9, </span>
                                     <span class="year">2017</span>
@@ -2154,23 +2310,28 @@ Event photo by Empire West Photo </p>
                         <p class="venue"> Waterhole </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-161636544422079">View Details</button>
-                        <a href="http://www.facebook.com/events/161636544422079" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-161636544422079" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/161636544422079" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-161636544422079" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Odd Ball SAT Blind Owl Band Bella's Bartok Tigerman Woah </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">December </span><span class="day">9, </span><span class="year">2017</span>
-						<span class="time">9:00PM</span>
-					        -
+                                                <span class="month">December </span>
+                                                <span class="day">9, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">9:00PM</span>
+                                                -
                                                 <span class="weekday">Sunday, </span>
-						<span class="month">December </span><span class="day">10, </span><span class="year">2017</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">December </span>
+                                                <span class="day">10, </span>
+                                                <span class="year">2017</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Odd Ball - December 8th and 9th
@@ -2224,7 +2385,7 @@ with TOO MUCH HEART </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">January </span>
                                     <span class="day">13, </span>
                                     <span class="year">2018</span>
@@ -2240,19 +2401,22 @@ with TOO MUCH HEART </p>
                         <p class="venue"> Nietzsche's </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1972393709695880">View Details</button>
-                        <a href="http://www.facebook.com/events/1972393709695880" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1972393709695880" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1972393709695880" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1972393709695880" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project & Mosswalk at Nietzsche's </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">January </span><span class="day">13, </span><span class="year">2018</span>
-						<span class="time">10:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">January </span>
+                                                <span class="day">13, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">10:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Based out of Western NY, the English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and  improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. “The English Project, Vol.1” is  out now. Please get your copy now.
@@ -2276,7 +2440,7 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Tuesday, </span>
+                                    <span class="weekday">Tuesday, </span>
                                     <span class="month">January </span>
                                     <span class="day">16, </span>
                                     <span class="year">2018</span>
@@ -2292,19 +2456,22 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <p class="venue"> Town Ballroom </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1994288684186968">View Details</button>
-                        <a href="http://www.facebook.com/events/1994288684186968" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1994288684186968" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1994288684186968" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1994288684186968" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The Devil Makes Three at Town Ballroom </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Tuesday, </span>
-						<span class="month">January </span><span class="day">16, </span><span class="year">2018</span>
-						<span class="time">7:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">January </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">7:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> The Devil Makes Three at Town Ballroom </p>
@@ -2322,7 +2489,7 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">January </span>
                                     <span class="day">20, </span>
                                     <span class="year">2018</span>
@@ -2338,23 +2505,28 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <p class="venue"> Kings Rook Club </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-399191167166578">View Details</button>
-                        <a href="http://www.facebook.com/events/399191167166578" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-399191167166578" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/399191167166578" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-399191167166578" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Personal Blend at Kings Rook Club! JAN 20! </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">January </span><span class="day">20, </span><span class="year">2018</span>
-						<span class="time">10:00PM</span>
-					        -
+                                                <span class="month">January </span>
+                                                <span class="day">20, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">10:00PM</span>
+                                                -
                                                 <span class="weekday">Sunday, </span>
-						<span class="month">January </span><span class="day">21, </span><span class="year">2018</span>
-						<span class="time">2:00AM</span>
-					    </div>
-					</h6>
+                                                <span class="month">January </span>
+                                                <span class="day">21, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">2:00AM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> None Specified </p>
@@ -2372,7 +2544,7 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Wednesday, </span>
+                                    <span class="weekday">Wednesday, </span>
                                     <span class="month">February </span>
                                     <span class="day">21, </span>
                                     <span class="year">2018</span>
@@ -2388,23 +2560,28 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <p class="venue"> Sticky Lips BBQ Juke Joint </p>
                         <div hidden class="priority"> 9 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-168446737067126">View Details</button>
-                        <a href="http://www.facebook.com/events/168446737067126" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-168446737067126" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/168446737067126" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-168446737067126" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> Brian Koehler at Sticky Lips BBQ Juke Joint </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Wednesday, </span>
-						<span class="month">February </span><span class="day">21, </span><span class="year">2018</span>
-						<span class="time">6:30PM</span>
-					        -
+                                                <span class="month">February </span>
+                                                <span class="day">21, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">6:30PM</span>
+                                                -
                                                 <span class="weekday">Wednesday, </span>
-						<span class="month">February </span><span class="day">21, </span><span class="year">2018</span>
-						<span class="time">8:30PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">February </span>
+                                                <span class="day">21, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">8:30PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> GENRE: Folk/Rock/Americana
@@ -2424,7 +2601,7 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Friday, </span>
+                                    <span class="weekday">Friday, </span>
                                     <span class="month">March </span>
                                     <span class="day">16, </span>
                                     <span class="year">2018</span>
@@ -2440,19 +2617,22 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <p class="venue"> Kings Rook Club </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128010414528948">View Details</button>
-                        <a href="http://www.facebook.com/events/128010414528948" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-128010414528948" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/128010414528948" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-128010414528948" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project at King Rook Club </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Friday, </span>
-						<span class="month">March </span><span class="day">16, </span><span class="year">2018</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">March </span>
+                                                <span class="day">16, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Based out of Western NY, the English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. Their debut EP, “The English Project, Vol.1” is OUT NOW. </p>
@@ -2470,7 +2650,7 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Saturday, </span>
+                                    <span class="weekday">Saturday, </span>
                                     <span class="month">March </span>
                                     <span class="day">17, </span>
                                     <span class="year">2018</span>
@@ -2486,19 +2666,22 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <p class="venue"> Nietzsche's </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286459141860581">View Details</button>
-                        <a href="http://www.facebook.com/events/286459141860581" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-286459141860581" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/286459141860581" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-286459141860581" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project at Nietzsche's </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Saturday, </span>
-						<span class="month">March </span><span class="day">17, </span><span class="year">2018</span>
-						<span class="time">9:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">March </span>
+                                                <span class="day">17, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">9:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Based out of Western NY, the English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. Their debut EP, “The English Project, Vol.1” is OUT NOW. </p>
@@ -2516,7 +2699,7 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">12, </span>
                                     <span class="year">2018</span>
@@ -2532,23 +2715,28 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-301367027046358">View Details</button>
-                        <a href="http://www.facebook.com/events/301367027046358" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-301367027046358" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/301367027046358" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-301367027046358" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project Every Thursday in April at Three Heads Brewing </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">12, </span><span class="year">2018</span>
-						<span class="time">8:00PM</span>
-					        -
+                                                <span class="month">April </span>
+                                                <span class="day">12, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">8:00PM</span>
+                                                -
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">12, </span><span class="year">2018</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">April </span>
+                                                <span class="day">12, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Come hangout with us Every Thursday at Three Heads Brewing.
@@ -2568,7 +2756,7 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">19, </span>
                                     <span class="year">2018</span>
@@ -2584,23 +2772,28 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142592013134562">View Details</button>
-                        <a href="http://www.facebook.com/events/142592013134562" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-142592013134562" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/142592013134562" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-142592013134562" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project Every Thursday in April at Three Heads Brewing </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">19, </span><span class="year">2018</span>
-						<span class="time">8:00PM</span>
-					        -
+                                                <span class="month">April </span>
+                                                <span class="day">19, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">8:00PM</span>
+                                                -
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">19, </span><span class="year">2018</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">April </span>
+                                                <span class="day">19, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Based out of Western NY, the English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and  improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. Their debut EP, “The English Project, Vol.1” is out now. </p>
@@ -2618,7 +2811,7 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">26, </span>
                                     <span class="year">2018</span>
@@ -2634,23 +2827,28 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1965058230433634">View Details</button>
-                        <a href="http://www.facebook.com/events/1965058230433634" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1965058230433634" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1965058230433634" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1965058230433634" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project Every Thursday in April at Three Heads Brewing </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">26, </span><span class="year">2018</span>
-						<span class="time">8:00PM</span>
-					        -
+                                                <span class="month">April </span>
+                                                <span class="day">26, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">8:00PM</span>
+                                                -
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">26, </span><span class="year">2018</span>
-						<span class="time">11:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">April </span>
+                                                <span class="day">26, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">11:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> Thank you all for your love and support.
@@ -2670,7 +2868,7 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">Thursday, </span>
+                                    <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">5, </span>
                                     <span class="year">2018</span>
@@ -2686,19 +2884,22 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <p class="venue"> Three Heads Brewing </p>
                         <div hidden class="priority"> 8 </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1960420060895840">View Details</button>
-                        <a href="http://www.facebook.com/events/1960420060895840" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>     <div class="modal fade" id="modal-1960420060895840" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+                        <a href="http://www.facebook.com/events/1960420060895840" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <div class="modal fade" id="modal-1960420060895840" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> The English Project Every Thursday in April at Three Heads Brewing </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">Thursday, </span>
-						<span class="month">April </span><span class="day">5, </span><span class="year">2018</span>
-						<span class="time">8:00PM</span>
-					    </div>
-					</h6>
+                                                <span class="month">April </span>
+                                                <span class="day">5, </span>
+                                                <span class="year">2018</span>
+                                                <span class="time">8:00PM</span>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> THE ENGLISH PROJECT is playing every Thursday starting April 5th at THREE HEADS BREWING with special guests. Come hangout and enjoy the beginnings of Spring. 

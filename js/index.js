@@ -2,21 +2,21 @@ $(document).ready(function() {
 	$("#filter-submit").click(function() {
 		var event_tags = $(".event");
 		filter_option = {};
-		$(".city-filter option:selected").each(function() {
+		$("#city-filter option:selected").each(function() {
 			city = $(this).text().trim();
 			if (city !== "All Cities") {
 				filter_option.city = city;
 			}
 		});
 
-		$(".state-filter option:selected").each(function() {
+		$("#state-filter option:selected").each(function() {
 			state = $(this).text().trim();
 			if (state !== "All States") {
 				filter_option.state = state;
 			}
 		});
 
-		$(".venue-filter option:selected").each(function() {
+		$("#venue-filter option:selected").each(function() {
 			venue = $(this).text().trim();
 			if (venue !== "All Venues") {
 				filter_option.venue = venue;
@@ -50,5 +50,8 @@ $(document).ready(function() {
 			// this means all the filters are on "All X"
 			event_tags.show();
 		}
+	});
+	$("#filter-reset").click(function() {
+		$(".filter-master").val('0');
 	});
 });

@@ -48,7 +48,10 @@ filters_start_html = """
                 <div class="row">
 """
 filters_end_html = """
-                    <div class="col-xs-3">
+                    <div class="col-xs-2 col-sm-1">
+                        <button type="button" id="filter-reset" class="btn btn-primary">Reset</button>
+                    </div>
+                    <div class="col-xs-2 col-sm-1">
                         <button type="button" id="filter-submit" class="btn btn-primary">Filter</button>
                     </div>
                 </div>
@@ -56,51 +59,20 @@ filters_end_html = """
         </div>
     </div>
 """
-def create_city_filter(cities_list):
-    start_html = """
-                    <div class="col-xs-3">
-                        <select class="form-control city-filter">
-                            <option selected="selected">All Cities</option>"""
-    end_html = """
-                        </select>
-                    </div>
-    """
-    return_html = start_html
-    for city in cities_list:
-        return_html += """
-                            <option>""" + city + "</option>" 
-    return_html += end_html
-    return return_html
 
-def create_state_filter(states_list):
+def create_content_filter(filter_list, filter_on, default_option):
     start_html = """
-                    <div class="col-xs-3">
-                        <select class="form-control state-filter">
-                            <option selected="selected">All States</option>"""
+                    <div class="col-xs-4 col-sm-2">
+                        <select id="{0}-filter" class="form-control filter-master">
+                            <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option)
     end_html = """
                         </select>
                     </div>
     """
     return_html = start_html
-    for state in states_list:
+    for filter_item in filter_list:
         return_html += """
-                            <option>""" + state + "</option>" 
-    return_html += end_html
-    return return_html
-
-def create_venue_filter(venues_list):
-    start_html = """
-                    <div class="col-xs-3">
-                        <select class="form-control venue-filter">
-                            <option selected="selected">All Venues</option>"""
-    end_html = """
-                        </select>
-                    </div>
-    """
-    return_html = start_html
-    for venue in venues_list:
-        return_html += """
-                            <option>""" + venue + "</option>" 
+                            <option>""" + filter_item + "</option>" 
     return_html += end_html
     return return_html
 
@@ -122,7 +94,7 @@ def create_event_block(ev_data):
                         <div class="date">
                             <div class="start_date">
                                 <p>
-				    <span class="weekday">{start_weekday}, </span>
+                                    <span class="weekday">{start_weekday}, </span>
                                     <span class="month">{start_month_name} </span>
                                     <span class="day">{start_day}, </span>
                                     <span class="year">{start_year}</span>
@@ -139,26 +111,31 @@ def create_event_block(ev_data):
                         <div hidden class="priority"> {priority} </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{ev_id}">View Details</button>
                         <a href="http://www.facebook.com/events/{ev_id}" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>"""
-    modal_html ="""     <div class="modal fade" id="modal-{ev_id}" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
+    modal_html ="""
+                        <div class="modal fade" id="modal-{ev_id}" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         <h4 class="modal-title"> {name} </h4>
                                         <h6 class="modal-title">
-					    <div class="start_date">
+                                            <div class="start_date">
                                                 <span class="weekday">{start_weekday}, </span>
-						<span class="month">{start_month_name} </span><span class="day">{start_day}, </span><span class="year">{start_year}</span>
-						<span class="time">{start_time}</span>"""
+                                                <span class="month">{start_month_name} </span>
+                                                <span class="day">{start_day}, </span>
+                                                <span class="year">{start_year}</span>
+                                                <span class="time">{start_time}</span>"""
     if (ev_data[tag_end] != NONE_SPECIFIED):
         modal_html +="""
-					        -
+                                                -
                                                 <span class="weekday">{end_weekday}, </span>
-						<span class="month">{end_month_name} </span><span class="day">{end_day}, </span><span class="year">{end_year}</span>
-						<span class="time">{end_time}</span>"""
+                                                <span class="month">{end_month_name} </span>
+                                                <span class="day">{end_day}, </span>
+                                                <span class="year">{end_year}</span>
+                                                <span class="time">{end_time}</span>"""
     modal_html +="""
-					    </div>
-					</h6>
+                                            </div>
+                                        </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> {desc} </p>
@@ -281,9 +258,9 @@ if __name__ == "__main__":
         new_index.write(doc_head)
         #write the filter bar
         new_index.write(filters_start_html)
-        new_index.write(create_city_filter(cities_sorted))
-        new_index.write(create_state_filter(states_sorted))
-        new_index.write(create_venue_filter(venues_sorted))
+        new_index.write(create_content_filter(cities_sorted, tag_city, "All Cities"))
+        new_index.write(create_content_filter(states_sorted, tag_state, "All States"))
+        new_index.write(create_content_filter(venues_sorted, tag_venue, "All Venues"))
         new_index.write(filters_end_html)
         #start the event block
         new_index.write(event_block_beginning)
