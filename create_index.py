@@ -42,7 +42,7 @@ tag_end = "end_time"
 NONE_SPECIFIED = "None Specified"
 
 filters_start_html = """
-    <div class="container">
+    <div id="filter-block" class="container">
         <div class="panel">
             <div class="panel-body">
                 <div class="row">
@@ -79,7 +79,7 @@ def create_content_filter(filter_list, filter_on, default_option):
 event_block_beginning = """
     
     <!-- events -->
-    <div class="container">
+    <div id="event-block" class="container">
         <div class="row">"""
 event_block_end = """
         </div>
@@ -87,7 +87,7 @@ event_block_end = """
 """
 def create_event_block(ev_data):
     thumbnail_html = """
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 event">
+            <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
                         <h4 class="event_name"> {name} </h3>
@@ -150,6 +150,12 @@ def create_event_block(ev_data):
 
     return return_html
 
+def get_clearfix_tag(col_size=None):
+    if col_size == None:
+       return """
+            <div class="clearfix">"""
+    return """
+            <div class='clearfix visible-{}'></div>""".format(col_size)
 
 def create_event_dict(events_loc):
     event_dict = {}
@@ -264,8 +270,20 @@ if __name__ == "__main__":
         new_index.write(filters_end_html)
         #start the event block
         new_index.write(event_block_beginning)
+        #this will theoretically go to infinity but realistically only goes as high as the num of events
+        block_number = 1
         for block in event_blocks:
             new_index.write(block)
+            #this is to add clearfixes when needed to fix stupid float problems
+            #if column sizes change this needs to change
+            if (block_number % 4 == 0):
+                new_index.write(get_clearfix_tag("lg"))
+            if (block_number % 3 == 0):
+                new_index.write(get_clearfix_tag("md"))
+            if (block_number % 2 == 0):
+                new_index.write(get_clearfix_tag("sm"))
+            block_number += 1
+
         new_index.write(event_block_end)
         new_index.write(doc_foot)
     new_index.close()
