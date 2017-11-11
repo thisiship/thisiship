@@ -91,6 +91,7 @@ def create_event_block(ev_data):
                 <div class="thumbnail">
                     <div class="caption">
                         <h4 class="event_name"> {name} </h3>
+                        <hr/>
                         <div class="date">
                             <div class="start_date">
                                 <p>
@@ -149,13 +150,6 @@ def create_event_block(ev_data):
     return_html = (thumbnail_html + modal_html).format(name = ev_data[tag_name], start_day = ev_data[tag_start_day], start_month = ev_data[tag_start_month], start_month_name = ev_data[tag_start_month_name], start_year = ev_data[tag_start_year], start_time = ev_data[tag_start], end_day = ev_data[tag_end_day], end_month = ev_data[tag_end_month], end_month_name = ev_data[tag_end_month_name], end_year = ev_data[tag_end_year], end_time = ev_data[tag_end], city = ev_data[tag_city], state = ev_data[tag_state], venue = ev_data[tag_venue], priority = ev_data[tag_prio], ev_id = ev_data[tag_id], desc = ev_data[tag_desc], start_weekday = ev_data[tag_start_weekday], end_weekday = ev_data[tag_end_weekday])
 
     return return_html
-
-def get_clearfix_tag(col_size=None):
-    if col_size == None:
-       return """
-            <div class="clearfix">"""
-    return """
-            <div class='clearfix visible-{}'></div>""".format(col_size)
 
 def create_event_dict(events_loc):
     event_dict = {}
@@ -270,19 +264,8 @@ if __name__ == "__main__":
         new_index.write(filters_end_html)
         #start the event block
         new_index.write(event_block_beginning)
-        #this will theoretically go to infinity but realistically only goes as high as the num of events
-        block_number = 1
         for block in event_blocks:
             new_index.write(block)
-            #this is to add clearfixes when needed to fix stupid float problems
-            #if column sizes change this needs to change
-            if (block_number % 4 == 0):
-                new_index.write(get_clearfix_tag("lg"))
-            if (block_number % 3 == 0):
-                new_index.write(get_clearfix_tag("md"))
-            if (block_number % 2 == 0):
-                new_index.write(get_clearfix_tag("sm"))
-            block_number += 1
 
         new_index.write(event_block_end)
         new_index.write(doc_foot)
