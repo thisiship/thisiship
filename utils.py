@@ -1,6 +1,7 @@
 import json
 import sys
 import os
+import facebook
 
 
 template_dir = "templates/"
@@ -29,3 +30,11 @@ def get_event_list(event_list_disk):
         event_list = event_list_file.read().splitlines()
     event_list_file.close()
     return event_list
+
+def get_facebook_graph():
+    f = open('access_token.txt', 'r')
+    access_token = f.read()
+    f.close()
+    graph = facebook.GraphAPI(access_token=access_token)
+    return graph
+

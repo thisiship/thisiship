@@ -4,20 +4,13 @@ import sys
 import os
 import utils
 
-def get_facebook_graph():
-    f = open('access_token.txt', 'r')
-    access_token = f.read()
-    f.close()
-    graph = facebook.GraphAPI(access_token=access_token)
-    return graph
-
 def get_event_info(graph, event_id):
     return graph.get_object(event_id) 
 
 if __name__ == "__main__":
     event_list_disk = "event_list.txt"
     jsondump_loc = "jsondump/"
-    graph = get_facebook_graph()
+    graph = utils.get_facebook_graph()
     event_list = set(utils.get_event_list(event_list_disk))
     for event_id in event_list:
         if (event_id is not None and event_id != ""):
