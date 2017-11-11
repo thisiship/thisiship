@@ -53,5 +53,6 @@ $(document).ready(function() {
 	});
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
+		$("#filter-submit").trigger("click");
 	});
 });
