@@ -48,15 +48,13 @@ filters_start_html = """
                 <div class="row">
 """
 filters_end_html = """
-                    <div class="col-xs-6">
+                    <div class="pull-right">
                         <div id="filter-btns" class="btn-group">
                             <button type="button" id="filter-reset" class="btn btn-primary" data-toggle="tooltip" title="Reset Events">
                                 <span class="glyphicon glyphicon-refresh"></span>
-                                Reset
                             </button>
                             <button type="button" id="filter-submit" class="btn btn-primary" data-toggle="tooltip" title="Apply Filters">
                                 <span class="glyphicon glyphicon-filter"></span>
-                                Filter
                             </button>
                         </div>
                     </div>
@@ -68,7 +66,7 @@ filters_end_html = """
 
 def create_content_filter(filter_list, filter_on, default_option):
     start_html = """
-                    <div class="col-xs-6 col-sm-2">
+                    <div class="col-sm-3">
                         <select id="{0}-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a {2}">
                             <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option,filter_on.capitalize())
     end_html = """
