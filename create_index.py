@@ -50,8 +50,14 @@ filters_start_html = """
 filters_end_html = """
                     <div class="col-xs-6">
                         <div id="filter-btns" class="btn-group">
-                            <button type="button" id="filter-reset" class="btn btn-primary">Reset</button>
-                            <button type="button" id="filter-submit" class="btn btn-primary">Filter</button>
+                            <button type="button" id="filter-reset" class="btn btn-primary" data-toggle="tooltip" title="Reset Events">
+                                <span class="glyphicon glyphicon-refresh"></span>
+                                Reset
+                            </button>
+                            <button type="button" id="filter-submit" class="btn btn-primary" data-toggle="tooltip" title="Apply Filters">
+                                <span class="glyphicon glyphicon-filter"></span>
+                                Filter
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -63,8 +69,8 @@ filters_end_html = """
 def create_content_filter(filter_list, filter_on, default_option):
     start_html = """
                     <div class="col-xs-6 col-sm-2">
-                        <select id="{0}-filter" class="form-control filter-master">
-                            <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option)
+                        <select id="{0}-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a {2}">
+                            <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option,filter_on.capitalize())
     end_html = """
                         </select>
                     </div>
@@ -95,23 +101,32 @@ def create_event_block(ev_data):
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">{start_weekday}, </span>
                                     <span class="month">{start_month_name} </span>
                                     <span class="day">{start_day}, </span>
                                     <span class="year">{start_year}</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">{start_time}</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">{city}</span>, <span class="state">{state}</span>
                         </p>
-                        <p class="venue"> {venue} </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            {venue}
+                        </p>
                         <div hidden class="priority"> {priority} </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{ev_id}">View Details</button>
-                        <a href="http://www.facebook.com/events/{ev_id}" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>"""
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/{ev_id}" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>"""
     modal_html ="""
                         <div class="modal fade" id="modal-{ev_id}" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">

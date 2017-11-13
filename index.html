@@ -14,6 +14,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="css/thisiship.css" rel="stylesheet">
 </head>
@@ -32,7 +34,7 @@
                 <div class="row">
 
                     <div class="col-xs-6 col-sm-2">
-                        <select id="city-filter" class="form-control filter-master">
+                        <select id="city-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a City">
                             <option value="0" selected="selected">All Cities</option>
                             <option>Buffalo</option>
                             <option>Erie</option>
@@ -47,7 +49,7 @@
                     </div>
     
                     <div class="col-xs-6 col-sm-2">
-                        <select id="state-filter" class="form-control filter-master">
+                        <select id="state-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a State">
                             <option value="0" selected="selected">All States</option>
                             <option>NY</option>
                             <option>PA</option>
@@ -56,7 +58,7 @@
                     </div>
     
                     <div class="col-xs-6 col-sm-2">
-                        <select id="venue-filter" class="form-control filter-master">
+                        <select id="venue-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a Venue">
                             <option value="0" selected="selected">All Venues</option>
                             <option>ANTHOLOGY</option>
                             <option>Abilene Bar and Lounge</option>
@@ -85,8 +87,14 @@
     
                     <div class="col-xs-6">
                         <div id="filter-btns" class="btn-group">
-                            <button type="button" id="filter-reset" class="btn btn-primary">Reset</button>
-                            <button type="button" id="filter-submit" class="btn btn-primary">Filter</button>
+                            <button type="button" id="filter-reset" class="btn btn-primary" data-toggle="tooltip" title="Reset Events">
+                                <span class="glyphicon glyphicon-refresh"></span>
+                                Reset
+                            </button>
+                            <button type="button" id="filter-submit" class="btn btn-primary" data-toggle="tooltip" title="Apply Filters">
+                                <span class="glyphicon glyphicon-filter"></span>
+                                Filter
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -106,23 +114,32 @@
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Monday, </span>
                                     <span class="month">November </span>
                                     <span class="day">13, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:30PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> ButaPub </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            ButaPub
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-311138319373568">View Details</button>
-                        <a href="http://www.facebook.com/events/311138319373568" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-311138319373568" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/311138319373568" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-311138319373568" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -166,23 +183,32 @@ Peace ~ Bless Up! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Ithaca</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Casita Del Polaris </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Casita Del Polaris
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1522010691221041">View Details</button>
-                        <a href="http://www.facebook.com/events/1522010691221041" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1522010691221041" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1522010691221041" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1522010691221041" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -224,23 +250,32 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Wednesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">15, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Ithaca</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Dock </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Dock
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307516323036494">View Details</button>
-                        <a href="http://www.facebook.com/events/307516323036494" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307516323036494" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/307516323036494" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-307516323036494" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -274,23 +309,32 @@ Polished to perfection over a three-year period, Light Flashes invokes the spark
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Bop Shop Records </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Bop Shop Records
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1800372256642619">View Details</button>
-                        <a href="http://www.facebook.com/events/1800372256642619" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1800372256642619" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1800372256642619" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1800372256642619" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -332,23 +376,32 @@ Lost Wax Collective is led by drummer extraordinaire Brendon Caroselli, and feat
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Flour City Station </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Flour City Station
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-319945968473561">View Details</button>
-                        <a href="http://www.facebook.com/events/319945968473561" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-319945968473561" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/319945968473561" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-319945968473561" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -398,23 +451,32 @@ Tix: $7.50 adv // $10 dos
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Jamestown</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> MoJo's </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            MoJo's
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1968594703419509">View Details</button>
-                        <a href="http://www.facebook.com/events/1968594703419509" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1968594703419509" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1968594703419509" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1968594703419509" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -448,23 +510,32 @@ Tix: $7.50 adv // $10 dos
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">South Burlington</span>, <span class="state">VT</span>
                         </p>
-                        <p class="venue"> Higher Ground </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Higher Ground
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1865172397143702">View Details</button>
-                        <a href="http://www.facebook.com/events/1865172397143702" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1865172397143702" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1865172397143702" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1865172397143702" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -519,23 +590,32 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">17, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Abilene Bar and Lounge </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Abilene Bar and Lounge
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-124583954879317">View Details</button>
-                        <a href="http://www.facebook.com/events/124583954879317" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-124583954879317" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/124583954879317" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-124583954879317" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -575,23 +655,32 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">21, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Funk 'n Waffles Music Hall </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Funk 'n Waffles Music Hall
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1783146791983528">View Details</button>
-                        <a href="http://www.facebook.com/events/1783146791983528" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1783146791983528" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1783146791983528" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1783146791983528" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -630,23 +719,32 @@ http://www.ticketweb.com/fb/7783065/funknwaffles </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Wednesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">22, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00AM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Geneva</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> FLX Live </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            FLX Live
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286992075126241">View Details</button>
-                        <a href="http://www.facebook.com/events/286992075126241" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286992075126241" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/286992075126241" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-286992075126241" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -694,23 +792,32 @@ We will celebrate the oncoming season and the end of the harvest with fantastic 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Flour City Station </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Flour City Station
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-297728537370262">View Details</button>
-                        <a href="http://www.facebook.com/events/297728537370262" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-297728537370262" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/297728537370262" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-297728537370262" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -772,23 +879,32 @@ Special guests abound all night so stay tuned!!! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The California Brew Haus </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The California Brew Haus
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-299652390515275">View Details</button>
-                        <a href="http://www.facebook.com/events/299652390515275" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-299652390515275" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/299652390515275" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-299652390515275" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -832,23 +948,32 @@ Don't miss the fun!!!! </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Syracuse</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Westcott Theater </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Westcott Theater
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-819537324894427">View Details</button>
-                        <a href="http://www.facebook.com/events/819537324894427" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-819537324894427" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/819537324894427" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-819537324894427" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -900,23 +1025,32 @@ Tickets are ON SALE NOW on thewestcotttheater.com and at the Sound Garden in Arm
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">November </span>
                                     <span class="day">24, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-125469171549820">View Details</button>
-                        <a href="http://www.facebook.com/events/125469171549820" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-125469171549820" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/125469171549820" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-125469171549820" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -962,23 +1096,32 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">November </span>
                                     <span class="day">25, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-295817580921765">View Details</button>
-                        <a href="http://www.facebook.com/events/295817580921765" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-295817580921765" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/295817580921765" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-295817580921765" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1030,23 +1173,32 @@ Event photo by Aaron Winters </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Tuesday, </span>
                                     <span class="month">November </span>
                                     <span class="day">28, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Funk 'n Waffles Music Hall </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Funk 'n Waffles Music Hall
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2008065026129034">View Details</button>
-                        <a href="http://www.facebook.com/events/2008065026129034" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-2008065026129034" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/2008065026129034" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-2008065026129034" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1083,23 +1235,32 @@ http://www.ticketweb.com/fb/7771495/funknwaffles </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">November </span>
                                     <span class="day">30, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Funk 'n Waffles Music Hall </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Funk 'n Waffles Music Hall
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1982125085334265">View Details</button>
-                        <a href="http://www.facebook.com/events/1982125085334265" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1982125085334265" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1982125085334265" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1982125085334265" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1138,23 +1299,32 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> ANTHOLOGY </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            ANTHOLOGY
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-164429860777995">View Details</button>
-                        <a href="http://www.facebook.com/events/164429860777995" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-164429860777995" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/164429860777995" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-164429860777995" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1210,23 +1380,32 @@ Founded in 2015 by The Chase Brothers, Adam Chase and Matthew Chase, JAZZ IS PHS
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Little Theatre </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Little Theatre
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1724225011220002">View Details</button>
-                        <a href="http://www.facebook.com/events/1724225011220002" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1724225011220002" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1724225011220002" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1724225011220002" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1278,23 +1457,32 @@ https://omniwebticketing.com/the-little/?schdate=2017-12-01&film=880999698&ptime
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Ithaca</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Haunt </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Haunt
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1524625594270144">View Details</button>
-                        <a href="http://www.facebook.com/events/1524625594270144" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1524625594270144" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1524625594270144" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1524625594270144" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1346,23 +1534,32 @@ http://thehaunt.com </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">1, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Saranac Lake</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Waterhole </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Waterhole
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-347820062328217">View Details</button>
-                        <a href="http://www.facebook.com/events/347820062328217" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-347820062328217" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/347820062328217" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-347820062328217" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1418,23 +1615,32 @@ The Blend released their debut full length record, “Rewind”, in the Fall of 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">December </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Syracuse</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Funk 'n Waffles Downtown </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Funk 'n Waffles Downtown
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1827467874210633">View Details</button>
-                        <a href="http://www.facebook.com/events/1827467874210633" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1827467874210633" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1827467874210633" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1827467874210633" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1471,23 +1677,32 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">December </span>
                                     <span class="day">14, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142789549695547">View Details</button>
-                        <a href="http://www.facebook.com/events/142789549695547" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142789549695547" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/142789549695547" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-142789549695547" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1537,23 +1752,32 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">15, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-369233850183067">View Details</button>
-                        <a href="http://www.facebook.com/events/369233850183067" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-369233850183067" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/369233850183067" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-369233850183067" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1601,23 +1825,32 @@ $ </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">16, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Abilene Bar and Lounge </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Abilene Bar and Lounge
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-144288096198242">View Details</button>
-                        <a href="http://www.facebook.com/events/144288096198242" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-144288096198242" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/144288096198242" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-144288096198242" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1666,23 +1899,32 @@ Doors at 7, music at 9. $7 cover </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">2, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">10:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Flour City Station </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Flour City Station
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-151172035402737">View Details</button>
-                        <a href="http://www.facebook.com/events/151172035402737" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-151172035402737" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/151172035402737" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-151172035402737" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1733,23 +1975,32 @@ Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Bli
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">23, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">6:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-127823334570169">View Details</button>
-                        <a href="http://www.facebook.com/events/127823334570169" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-127823334570169" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/127823334570169" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-127823334570169" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1799,23 +2050,32 @@ They will be on sale shortly...stay tuned. </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">29, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Ithaca</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Haunt </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Haunt
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-314398735693577">View Details</button>
-                        <a href="http://www.facebook.com/events/314398735693577" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-314398735693577" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/314398735693577" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-314398735693577" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1856,23 +2116,32 @@ Together for two decades and hailed as “Future roots, reggae, and dub with an 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">30, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> ANTHOLOGY </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            ANTHOLOGY
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128216131161342">View Details</button>
-                        <a href="http://www.facebook.com/events/128216131161342" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128216131161342" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/128216131161342" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-128216131161342" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -1925,23 +2194,32 @@ The Saplings
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Sunday, </span>
                                     <span class="month">December </span>
                                     <span class="day">31, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Ithaca</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> The Haunt </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            The Haunt
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-177168159506846">View Details</button>
-                        <a href="http://www.facebook.com/events/177168159506846" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-177168159506846" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/177168159506846" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-177168159506846" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2014,23 +2292,32 @@ Milkweeds debut full length album, Dream of An American Family, was released in 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">8, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1980434252226523">View Details</button>
-                        <a href="http://www.facebook.com/events/1980434252226523" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1980434252226523" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1980434252226523" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1980434252226523" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2078,23 +2365,32 @@ $10 </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">December </span>
                                     <span class="day">8, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Saranac Lake</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Waterhole </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Waterhole
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307590013058936">View Details</button>
-                        <a href="http://www.facebook.com/events/307590013058936" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307590013058936" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/307590013058936" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-307590013058936" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2160,23 +2456,32 @@ Formed in 2009 in Portland, Maine, The Mallett Brothers Band is an independent, 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">9, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-162787934314771">View Details</button>
-                        <a href="http://www.facebook.com/events/162787934314771" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-162787934314771" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/162787934314771" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-162787934314771" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2224,23 +2529,32 @@ Event photo by Empire West Photo </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">December </span>
                                     <span class="day">9, </span>
                                     <span class="year">2017</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Saranac Lake</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Waterhole </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Waterhole
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-161636544422079">View Details</button>
-                        <a href="http://www.facebook.com/events/161636544422079" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-161636544422079" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/161636544422079" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-161636544422079" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2316,23 +2630,32 @@ with TOO MUCH HEART </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">January </span>
                                     <span class="day">13, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">10:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Buffalo</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Nietzsche's </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Nietzsche's
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1972393709695880">View Details</button>
-                        <a href="http://www.facebook.com/events/1972393709695880" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1972393709695880" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1972393709695880" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1972393709695880" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2372,23 +2695,32 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Tuesday, </span>
                                     <span class="month">January </span>
                                     <span class="day">16, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">7:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Buffalo</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Town Ballroom </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Town Ballroom
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1994288684186968">View Details</button>
-                        <a href="http://www.facebook.com/events/1994288684186968" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1994288684186968" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1994288684186968" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1994288684186968" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2422,23 +2754,32 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">January </span>
                                     <span class="day">20, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">10:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Erie</span>, <span class="state">PA</span>
                         </p>
-                        <p class="venue"> Kings Rook Club </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Kings Rook Club
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-399191167166578">View Details</button>
-                        <a href="http://www.facebook.com/events/399191167166578" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-399191167166578" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/399191167166578" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-399191167166578" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2478,23 +2819,32 @@ www.youtube.com/channel/UCA1MqgLn9n7glB-obrWwOmg/videos?view_as=subscriber </p>
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Wednesday, </span>
                                     <span class="month">February </span>
                                     <span class="day">21, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">6:30PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Sticky Lips BBQ Juke Joint </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Sticky Lips BBQ Juke Joint
+                        </p>
                         <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-168446737067126">View Details</button>
-                        <a href="http://www.facebook.com/events/168446737067126" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-168446737067126" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/168446737067126" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-168446737067126" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2536,23 +2886,32 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Friday, </span>
                                     <span class="month">March </span>
                                     <span class="day">16, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Erie</span>, <span class="state">PA</span>
                         </p>
-                        <p class="venue"> Kings Rook Club </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Kings Rook Club
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128010414528948">View Details</button>
-                        <a href="http://www.facebook.com/events/128010414528948" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-128010414528948" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/128010414528948" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-128010414528948" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2586,23 +2945,32 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Saturday, </span>
                                     <span class="month">March </span>
                                     <span class="day">17, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Buffalo</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Nietzsche's </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Nietzsche's
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286459141860581">View Details</button>
-                        <a href="http://www.facebook.com/events/286459141860581" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-286459141860581" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/286459141860581" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-286459141860581" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2636,23 +3004,32 @@ A night of acoustic music including 2 sets of originals as well as some covers o
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">12, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-301367027046358">View Details</button>
-                        <a href="http://www.facebook.com/events/301367027046358" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-301367027046358" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/301367027046358" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-301367027046358" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2694,23 +3071,32 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">19, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142592013134562">View Details</button>
-                        <a href="http://www.facebook.com/events/142592013134562" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-142592013134562" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/142592013134562" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-142592013134562" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2750,23 +3136,32 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">26, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1965058230433634">View Details</button>
-                        <a href="http://www.facebook.com/events/1965058230433634" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1965058230433634" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1965058230433634" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1965058230433634" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -2808,23 +3203,32 @@ Based out of Western NY, the English Project has solidified itself in the North 
                         <div class="date">
                             <div class="start_date">
                                 <p>
+                                    <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">Thursday, </span>
                                     <span class="month">April </span>
                                     <span class="day">5, </span>
                                     <span class="year">2018</span>
                                 </p>
                                 <p>
+                                    <span class="glyphicon glyphicon-time"></span>
                                     <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
                         <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">Rochester</span>, <span class="state">NY</span>
                         </p>
-                        <p class="venue"> Three Heads Brewing </p>
+                        <p class="venue">
+                            <span class="glyphicon glyphicon-flag"></span>
+                            Three Heads Brewing
+                        </p>
                         <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1960420060895840">View Details</button>
-                        <a href="http://www.facebook.com/events/1960420060895840" class="btn btn-primary" role="button" target="_blank">Facebook Event</a>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1960420060895840" data-toggle="tooltip" title="View Event Description">
+                            <span class="glyphicon glyphicon-info-sign"></span>
+                            View Details
+                        </button>
+                        <a href="http://www.facebook.com/events/1960420060895840" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
                         <div class="modal fade" id="modal-1960420060895840" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">

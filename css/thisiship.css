@@ -1,9 +1,13 @@
+body {
+	font-family: "Courier New", Courier, monospace;
+
+}
 /*
 nav {
 	background-color: #e3f2fd;
 }
 */
-h4.event_name {
+h4.event_name, .start_date > p, .venue {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
