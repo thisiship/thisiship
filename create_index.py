@@ -111,13 +111,13 @@ def create_event_block(ev_data):
                                 </p>
                             </div>
                         </div>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">{city}</span>, <span class="state">{state}</span>
-                        </p>
                         <p class="venue">
                             <span class="glyphicon glyphicon-flag"></span>
                             {venue}
+                        </p>
+                        <p class="location"> 
+                            <span class="glyphicon glyphicon-globe"></span>
+                            <span class="city">{city}</span>, <span class="state">{state}</span>
                         </p>
                         <div hidden class="priority"> {priority} </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
