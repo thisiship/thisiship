@@ -94,7 +94,7 @@ def create_event_block(ev_data):
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name"> {name} </h3>
+                        <h4 class="event_name" data-toggle="tooltip" title="{name}"> {name} </h3>
                         <hr/>
                         <div class="date">
                             <div class="start_date">
