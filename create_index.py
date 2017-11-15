@@ -97,7 +97,7 @@ def create_event_block(ev_data):
                         <h4 class="event_name" data-toggle="tooltip" title="{name}"> {name} </h3>
                         <hr/>
                         <div class="date">
-                            <div class="start_date">
+                            <div class="start_date" data-toggle="tooltip" title="{start_weekday}, {start_month_name} {start_day}, {start_year}">
                                 <p>
                                     <span class="glyphicon glyphicon-calendar"></span>
                                     <span class="weekday">{start_weekday}, </span>
@@ -111,7 +111,7 @@ def create_event_block(ev_data):
                                 </p>
                             </div>
                         </div>
-                        <p class="venue">
+                        <p class="venue" data-toggle="tooltip" title="{venue}">
                             <span class="glyphicon glyphicon-flag"></span>
                             {venue}
                         </p>
