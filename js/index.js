@@ -55,16 +55,15 @@ $(document).ready(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
 	});
-	/*
+
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
 		console.log("Sending info to GA: "  + event_id);
-		gtag('send', 'event', 'info', 'description', event_id);
+		gtag('event', 'info', 'description', event_id);
 	});
 	$(".fb-link").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text();
 		console.log("Sending info to GA: " + event_id);
-		gtag('send', 'event', 'info', 'facebook', event_id);
+		gtag('event', 'info', 'facebook', event_id);
 	});
-	*/
 });
