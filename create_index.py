@@ -66,7 +66,7 @@ filters_end_html = """
 
 def create_content_filter(filter_list, filter_on, default_option):
     start_html = """
-                    <div class="col-sm-3">
+                    <div class="col-sm-3 filter-column">
                         <select id="{0}-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a {2}">
                             <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option,filter_on.capitalize())
     end_html = """
@@ -120,11 +120,11 @@ def create_event_block(ev_data):
                             <span class="city">{city}</span>, <span class="state">{state}</span>
                         </p>
                         <div hidden class="priority"> {priority} </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
                             <span class="glyphicon glyphicon-info-sign"></span>
                             View Details
                         </button>
-                        <a href="http://www.facebook.com/events/{ev_id}" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>"""
+                        <a href="http://www.facebook.com/events/{ev_id}" class="btn" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>"""
     modal_html ="""
                         <div class="modal fade" id="modal-{ev_id}" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">

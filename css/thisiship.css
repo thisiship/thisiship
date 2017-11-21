@@ -7,6 +7,19 @@ h4.event_name, .start_date > p, .venue {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+nav.navbar, #filter-btns button, .btn {
+	background-color: #d8e1ff;
+	color: black;
+}
+nav.navbar a:link, nav.navbar a:visited {
+	color: black;
+}
+nav.navbar a:hover {
+	color: white;
+}
 .event > .thumbnail {
-	/*background-color: #eee5ff;*/
+	background-color: #f4f7ff;
+}
+.filter-column {
+	margin-bottom: 10px;
 }
