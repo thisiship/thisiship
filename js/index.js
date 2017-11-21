@@ -55,4 +55,15 @@ $(document).ready(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
 	});
+
+	$(".desc-btn").click(function() {
+		var event_id = $(this).attr('id');
+		console.log("Sending info to GA: "  + event_id);
+		ga('send', 'event', 'Info', 'Description', event_id);
+	});
+	$(".fb-link").click(function() {
+		var event_id = $(this).attr('id');
+		console.log("Sending info to GA: " + event_id);
+		ga('send', 'event', 'Info', 'Description', event_id);
+	});
 });
