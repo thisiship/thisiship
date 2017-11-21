@@ -1,14 +1,11 @@
 body {
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Oxygen", sans-serif;
 
 }
 h4.event_name, .start_date > p, .venue {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
-}
-h4.event_name {
-	font-weight: bold;
 }
 .event > .thumbnail {
 	/*background-color: #eee5ff;*/

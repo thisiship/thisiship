@@ -8,7 +8,7 @@
     <meta name="description" content="Website for viewing local music events">
     <meta name="author" content="source - http://github.com/tonisbones/thisiship">
     <met name="keywords" content="tonisbones,this is hip,thisiship,music,event,events,musician,musicians,anthony decausemaker,anthonydecausemaker,anthony,decausemaker,roc,roccity,flower city,flour city">
-    <title> This Is Hip </title>
+    <title> This is Hip </title>
 
     <script src="js/vendor/jquery.min.js"></script>
 
@@ -17,15 +17,24 @@
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+
     <link href="css/thisiship.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light bg-info">
             <div class="container">
-                <a class="navbar-brand" href="index.html">This Is Hip</a>
+                <a class="navbar-brand" href="index.html">This is Hip</a>
 				<p class="navbar-text"> Beta </p>
             </div>
+			<!--
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="about.html">About</li>
+				</ul>
+			</div>
+			-->
         </nav>
     </div>
 
@@ -38,14 +47,12 @@
                         <select id="city-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a City">
                             <option value="0" selected="selected">All Cities</option>
                             <option>Buffalo</option>
-                            <option>Burlington</option>
                             <option>Erie</option>
                             <option>Geneva</option>
                             <option>Ithaca</option>
                             <option>Jamestown</option>
                             <option>Rochester</option>
                             <option>Saranac Lake</option>
-                            <option>South Burlington</option>
                             <option>Syracuse</option>
                         </select>
                     </div>
@@ -55,7 +62,6 @@
                             <option value="0" selected="selected">All States</option>
                             <option>NY</option>
                             <option>PA</option>
-                            <option>VT</option>
                         </select>
                     </div>
     
@@ -64,23 +70,17 @@
                             <option value="0" selected="selected">All Venues</option>
                             <option>ANTHOLOGY</option>
                             <option>Abilene Bar and Lounge</option>
-                            <option>Bop Shop Records</option>
                             <option>Buffalo Iron Works</option>
                             <option>FLX Live</option>
                             <option>Flour City Station</option>
                             <option>Funk 'n Waffles Rochester</option>
                             <option>Funk 'n Waffles Syracuse</option>
-                            <option>Higher Ground</option>
                             <option>Kings Rook Club</option>
-                            <option>Lux Bar</option>
                             <option>MoJo's</option>
                             <option>Nietzsche's</option>
-                            <option>Radio Bean</option>
                             <option>Radio Social</option>
                             <option>Sticky Lips BBQ Juke Joint</option>
-                            <option>Temple Bar & Grille</option>
                             <option>The California Brew Haus</option>
-                            <option>The Dock</option>
                             <option>The Haunt</option>
                             <option>The Little Theatre</option>
                             <option>The Westcott Theater</option>
@@ -109,822 +109,6 @@
     <!-- events -->
     <div id="event-block" class="container">
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Reggae Night with The Crucial Reggae Social Club at The Dock"> Reggae Night with The Crucial Reggae Social Club at The Dock </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Wednesday, November 15, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Wednesday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">15, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="The Dock">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            The Dock
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Ithaca</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-307516323036494" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/307516323036494" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-307516323036494" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Reggae Night with The Crucial Reggae Social Club at The Dock </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Wednesday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">15, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Reggae Night with The Crucial Reggae Social Club at The Dock - Ithaca </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Tonight! Folkfaces Return To Temple Bar and Grille! Free! Two Sets!"> Tonight! Folkfaces Return To Temple Bar and Grille! Free! Two Sets! </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Wednesday, November 15, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Wednesday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">15, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Temple Bar & Grille">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Temple Bar & Grille
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-138463580113161" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/138463580113161" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-138463580113161" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Tonight! Folkfaces Return To Temple Bar and Grille! Free! Two Sets! </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Wednesday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">15, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
-                                                -
-                                                <span class="weekday">Thursday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">16, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">1:00AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Folkfaces-  No introduction needed...but...
-Folkfaces is a group out of Buffalo, NY that plays a rowdy blend of rootsy Folk, Jazz, and Blues - fusing classic forms with contemporary feelings and irresistibly danceable energy. Their inspiration comes from the mountains of Appalachia to the deltas of Mississippi, the swamps of Louisiana to the Concrete Jungle of the Rustbelt. Specializing in merriment and sticking it to the system, Folkfaces make the crowd dance and the hierarchy shatter.
-https://folkfaces.bandcamp.com/music
------------------------------------------------------------------
-SHOW STARTS AT 10PM
-
-ALWAYS FREE at Temple Bar & Grille.
------------------------------------------------------------------
-Any Burger w/ Fry and any Draft Beer only $9.99!!! Woah!
-Genny and a shot, $4 ;D </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Spotlight: Lost Wax"> Spotlight: Lost Wax </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Thursday, November 16, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Thursday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">16, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">7:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Bop Shop Records">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Bop Shop Records
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1800372256642619" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/1800372256642619" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-1800372256642619" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Spotlight: Lost Wax </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Thursday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">16, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">7:00PM</span>
-                                                -
-                                                <span class="weekday">Thursday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">16, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> FREE SHOW! The finale of SEASON FOUR of the Rochester Indie Musician Spotlight features Lost Wax Collective! Each concert at Bop Shop Records and Bernunzio Uptown Music will feature a ten-to-fifteen minute interview with the guest, then a 45 minute set.
-
-Lost Wax Collective is led by drummer extraordinaire Brendon Caroselli, and features a host of incredibly talented musicians. This group combines and twists genres into danceable, intelligent, and grooving music. </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Thursday Heater feat After Funk, Tweed, MoChester, Joey Harkum +"> Thursday Heater feat After Funk, Tweed, MoChester, Joey Harkum + </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Thursday, November 16, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Thursday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">16, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">7:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Flour City Station">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Flour City Station
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-319945968473561" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/319945968473561" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-319945968473561" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Thursday Heater feat After Funk, Tweed, MoChester, Joey Harkum + </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Thursday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">16, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">7:00PM</span>
-                                                -
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">12:00AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Come join us for our 1st monthly "Thursday Heater".  To help celebrate we are bringing in some incredible musicians.  The following bands will perform:
-
-After Funk  
-Tweed
-MoChester
-Joey Harkum / full band (Founder of Pasadena)
-Rust Belt Birds
-
-Doors: 7  Show: 8
-Tix: $7.50 adv // $10 dos
-21+ </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="The English Project at Mojo's Soul Night"> The English Project at Mojo's Soul Night </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Friday, November 17, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Friday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">17, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="MoJo's">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            MoJo's
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Jamestown</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 8 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1968594703419509" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/1968594703419509" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-1968594703419509" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> The English Project at Mojo's Soul Night </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Based out of Western NY, The English Project has solidified itself in the North Eastern U.S. as a collective that pushes the envelope of groove and  improvisation. Comprised of core members Chris English on drums and vocals, Paul McArdle on guitar, Andres Rivera on bass and Dave Solazzo on piano, the English Project seamlessly fuses funk and soul with elements of modern jazz. They’ve also opened for artists such as Bobby Brown, Arrested Development, Jazz is Phsh, Giant Panda Guerrilla Dub Squad, Sophistafunk, Thunderbody, John Kadlecik Band, and many others. Their debut EP, “The English Project, Vol.1” is scheduled to release this DECEMBER. </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Pia Mater at Three Heads"> Pia Mater at Three Heads </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Friday, November 17, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Friday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">17, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">7:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Three Heads Brewing">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Three Heads Brewing
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-918905541584132" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/918905541584132" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-918905541584132" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Pia Mater at Three Heads </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">7:00PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Pia Mater is a progressive/funk/rock/jam band that was a staple on the scene for years before taking a hiatus.  They were known to pack rooms and throw incredible shows.  
-
-Well......they're back.  
-
-We are honored to have them grace the Beer Garden stage for this return gig.  This promises to be a monster time and you do not want to miss it.  
-
-The boys will be joined by Zack Mikida on guitar and Tim Hull on sax for a few tunes, which will not disappoint. Bring your dancing shoes and be ready to get down. 
-
-Meat the Press - Rochester, NY will be here serving food as well.  So come for dinner and a show.  
-
-Doors at 7.
-Music at 8.
-$5 </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="The Blind Owl Band / Higher Ground / Burlington, VT"> The Blind Owl Band / Higher Ground / Burlington, VT </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Friday, November 17, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Friday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">17, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">8:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Higher Ground">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Higher Ground
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">South Burlington</span>, <span class="state">VT</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1865172397143702" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/1865172397143702" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-1865172397143702" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> The Blind Owl Band / Higher Ground / Burlington, VT </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">8:00PM</span>
-                                                -
-                                                <span class="weekday">Saturday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">18, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">1:00AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> The Blind Owl Band 
-Higher Ground Showcase Lounge
-Burlington, VT
-With Saints and Liars
-
-November 17th, 2017
-Doors 8:00pm Show 8:30pm
-$10.00 Advanced $12.00 Door
-
-Last night of Album Release Tour
-
-The Blind Owl Band - Saranac Lake, NY 
-www.theblindowlband.com
-"Adirondack Freight Train String Music"
-
-Hailing from Saranac Lake, NY, in the heart of the Adirondack mountains, The Blind Owl Band has been creating what they call Freight Train String Music since 2010. And a freight train it truly is. Although the quartet's sound is rooted in traditional stringed instruments (guitar, basses, banjo and mandolin), their music surges forward with the strength and power of a hundred-ton diesel locomotive. Songs barrel down the tracks with momentum and intensity normally found in much heavier, heavily amplified music. “Although we look like a bluegrass band we are not," explains co-founder Eric Munley (mandolin, vocals). "Collectively, we're a musical representation of the sounds floating around in our heads. We use the instruments of our ancestors, but play music of our time; we're influenced much more by all that has happened in the musical world over the past three decades than by what was created in the first three-quarters of the 20th Century." The Blind Owl Band builds on what they regard as a basic approach to traditional songwriting and arranging and push the envelope, stretching the limits of raw, acoustic instrumentation. Munley explains part of the band's mindset: "In a time of perfection and an increasing reliance on digital processors, we're trying to expand the sound, to inspire use of wood and metal." In just under five years the band has released two albums (Rabble Rousing and This Train We Ride is Made of Wood and Steel) and toured extensively throughout the eastern US, logging nearly 600 show across 17 states since January 2012. They've played on almost every festival east of the Mississippi and shared the stage with countless artists across all genres of the musical spectrum. Looking ahead into 2017, the band will begin recording their as-yet-untitled third full length album in early summer, with an eye toward a October 13th, 2017 release. This freight train has no one conductor but four shovel boys pushing the limits of their engine night after night, so climb aboard and get ready for a one-of-a-kind ride. </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="The Buffalo Brass Machine w/ Ruckus Juice Jug Stompers"> The Buffalo Brass Machine w/ Ruckus Juice Jug Stompers </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Friday, November 17, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Friday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">17, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Abilene Bar and Lounge">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Abilene Bar and Lounge
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-124583954879317" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/124583954879317" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-124583954879317" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> The Buffalo Brass Machine w/ Ruckus Juice Jug Stompers </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
-                                                -
-                                                <span class="weekday">Saturday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">18, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">1:30AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> The party returns to Rochester on 11/17 at 9PM as The Buffalo Brass Machine partners up with Ruckus Juice Jug Stompers for a wild show! Come dance and let your wild side out all night as the sounds of NOLA rock your world! Tickets are $8! </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="VIdeo Game Night at LUX! (Trivia! Music! Video Games!)"> VIdeo Game Night at LUX! (Trivia! Music! Video Games!) </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Friday, November 17, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Friday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">17, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">8:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Lux Bar">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Lux Bar
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-125180494869524" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/125180494869524" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-125180494869524" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> VIdeo Game Night at LUX! (Trivia! Music! Video Games!) </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">8:00PM</span>
-                                                -
-                                                <span class="weekday">Friday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">17, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">11:55PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Video Game Night at LUX! (666 South Ave.)
-
-**Video Games** Multiple stations will be set up with classic video game systems with Mario Kart, Sonic, Mortal Kombat, NBA Hang Time, WWE, Sega Genesis with over 100 preloaded games and much more** THE VIDEO GAMES ARE FREE TO PLAY**
-
-**Trivia** Test your video game knoweledge and challenge your friends** Grand prizes to be given to the winners of Trivia ($25 bar tab for 1st place and special Glitch giveaway for runner up)**
-
-**Live Music** Glitch has played several comicons around New York in is happy to be a local Rochester band. Music ranges from Zelda, Mortal Kombat, Mario, Streets of Rage, Donkey Kong, Sonic the Hedgehog....the list could go on..and on.**
-
-**Drink Specials!**
-
-5.00 Cover! </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Big Mean Sound Machine, Bella's Bartok at Funk 'n Waffles - Downtown"> Big Mean Sound Machine, Bella's Bartok at Funk 'n Waffles - Downtown </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Saturday, November 18, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Saturday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">18, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">10:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Funk 'n Waffles Syracuse">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Funk 'n Waffles Syracuse
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Syracuse</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-810891945783921" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/810891945783921" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-810891945783921" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Big Mean Sound Machine, Bella's Bartok at Funk 'n Waffles - Downtown </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Saturday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">18, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">10:00PM</span>
-                                                -
-                                                <span class="weekday">Sunday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">19, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">1:30AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Big Mean Sound Machine, Bella's Bartok at Funk 'n Waffles - Downtown </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Folkfaces at Radio Bean"> Folkfaces at Radio Bean </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Saturday, November 18, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Saturday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">18, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">11:30PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Radio Bean">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Radio Bean
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Burlington</span>, <span class="state">VT</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-1561725843886756" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/1561725843886756" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-1561725843886756" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Folkfaces at Radio Bean </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Saturday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">18, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">11:30PM</span>
-                                                -
-                                                <span class="weekday">Sunday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">19, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">1:00AM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> Folkfaces return to Burlington, VT!
-
-$5 cover </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 event">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Moho Collective at Three Heads Brewing (November 18, 2017)"> Moho Collective at Three Heads Brewing (November 18, 2017) </h3>
-                        <hr/>
-                        <div class="date">
-                            <div class="start_date" data-toggle="tooltip" title="Saturday, November 18, 2017">
-                                <p>
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                    <span class="weekday">Saturday, </span>
-                                    <span class="month">November </span>
-                                    <span class="day">18, </span>
-                                    <span class="year">2017</span>
-                                </p>
-                                <p>
-                                    <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">8:00PM</span>
-                                </p>
-                            </div>
-                        </div>
-                        <p class="venue" data-toggle="tooltip" title="Three Heads Brewing">
-                            <span class="glyphicon glyphicon-flag"></span>
-                            Three Heads Brewing
-                        </p>
-                        <p class="location"> 
-                            <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">Rochester</span>, <span class="state">NY</span>
-                        </p>
-                        <div hidden class="priority"> 9 </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-791462081036696" data-toggle="tooltip" title="View Event Description">
-                            <span class="glyphicon glyphicon-info-sign"></span>
-                            View Details
-                        </button>
-                        <a href="http://www.facebook.com/events/791462081036696" class="btn btn-primary" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>
-                        <div class="modal fade" id="modal-791462081036696" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Moho Collective at Three Heads Brewing (November 18, 2017) </h4>
-                                        <h6 class="modal-title">
-                                            <div class="start_date">
-                                                <span class="weekday">Saturday, </span>
-                                                <span class="month">November </span>
-                                                <span class="day">18, </span>
-                                                <span class="year">2017</span>
-                                                <span class="time">8:00PM</span>
-                                            </div>
-                                        </h6>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p> http://www.songkick.com/concerts/31398974-moho-collective-at-three-heads-brewing </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
@@ -1279,7 +463,7 @@ https://www.threeheadsbrewing.com/ </p>
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Danksgiving w/ The Medicinals, Bead N' Bone ft. Kevin Kinsella, Dj 2-Way"> Danksgiving w/ The Medicinals, Bead N' Bone ft. Kevin Kinsella, Dj 2-Way </h3>
+                        <h4 class="event_name" data-toggle="tooltip" title="Friday - Danksgiving w/ The Medicinals, Kevin Kinsella, Dj 2-Way"> Friday - Danksgiving w/ The Medicinals, Kevin Kinsella, Dj 2-Way </h3>
                         <hr/>
                         <div class="date">
                             <div class="start_date" data-toggle="tooltip" title="Friday, November 24, 2017">
@@ -1315,7 +499,7 @@ https://www.threeheadsbrewing.com/ </p>
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Danksgiving w/ The Medicinals, Bead N' Bone ft. Kevin Kinsella, Dj 2-Way </h4>
+                                        <h4 class="modal-title"> Friday - Danksgiving w/ The Medicinals, Kevin Kinsella, Dj 2-Way </h4>
                                         <h6 class="modal-title">
                                             <div class="start_date">
                                                 <span class="weekday">Friday, </span>
@@ -1355,9 +539,7 @@ To make the night truly complete we have also invited our great friend Dj 2-Way 
 
 Hakeem Dodley will be the Medicinals FOH engineer for the entire set.
 
-This show will be The Medicinals last hometown hit of 2017 before we get back into the studio to rehearse and record for 2018 so we truly hope you all can roll through with your respective crews and dance the night away with us.  
-
-Special guests abound all night so stay tuned!!! </p>
+This show will be The Medicinals last hometown hit of 2017 before we get back into the studio to rehearse and record for 2018 so we truly hope you all can roll through with your respective crews and dance the night away with us. </p>
                                     </div>
                                 </div>
                             </div>
@@ -1485,7 +667,7 @@ Don't miss the fun!!!! </p>
                                         </h6>
                                     </div>
                                     <div class="modal-body">
-                                        <p> DSP Shows Presents Richie and Rosie's Album Release Show at The Haunt on 11/24! 
+                                        <p> DSP Shows Presents Richie and Rosie's Album Release Show with Special Guest Lady D at The Haunt on 11/24! 
 
 7:00PM Doors
 8:00PM Show
@@ -1738,7 +920,7 @@ Event photo by Aaron Winters </p>
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="The Palmer Squares and Subsoil"> The Palmer Squares and Subsoil </h3>
+                        <h4 class="event_name" data-toggle="tooltip" title="The Palmer Squares n Subsoil at Funk n Waffles Roc Mon 11.27"> The Palmer Squares n Subsoil at Funk n Waffles Roc Mon 11.27 </h3>
                         <hr/>
                         <div class="date">
                             <div class="start_date" data-toggle="tooltip" title="Monday, November 27, 2017">
@@ -1751,7 +933,7 @@ Event photo by Aaron Winters </p>
                                 </p>
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:30PM</span>
+                                    <span class="time">9:00PM</span>
                                 </p>
                             </div>
                         </div>
@@ -1774,22 +956,26 @@ Event photo by Aaron Winters </p>
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> The Palmer Squares and Subsoil </h4>
+                                        <h4 class="modal-title"> The Palmer Squares n Subsoil at Funk n Waffles Roc Mon 11.27 </h4>
                                         <h6 class="modal-title">
                                             <div class="start_date">
                                                 <span class="weekday">Monday, </span>
                                                 <span class="month">November </span>
                                                 <span class="day">27, </span>
                                                 <span class="year">2017</span>
-                                                <span class="time">9:30PM</span>
+                                                <span class="time">9:00PM</span>
                                             </div>
                                         </h6>
                                     </div>
                                     <div class="modal-body">
                                         <p> $10 Adv/$12 Dos / Age 18 And Up
 
-Additional Info:
-The Palmer Squares: What originally began as an inside joke amongst high school friends, unexpectedly morphed into a legitimate hip-hop duo that has now garnered praise from some of the most respected veterans in the game. One day after school, despite never having the urge to pen a verse before, Acumental and Term conspired amongst themselves to poke fun of the prevailing trends. After sharing these ridiculous parodies with their close friends, they were showered with the anticipated laughs, but also received an overwhelming, unexpected response they could have never foreseen: "write more; this is amazing!" Thus, The Palmer Squares were born.Subsoil: Subsoil is lyric-driven live Hip-Hop music. Known for their high-energy live shows, Subsoil's performance wields a keen-edge of razor-sharp lyricism, with equal emphasis on tight grooves and furious improvisations within a funky dance aesthetic. These traits have earned the band the award for "Best Live Act" in 2010 from the Rochester NY's "Insider-Metromix Magazine" and Subsoil has gained a fan base all over the upstate NY region by their relentless touring throughout the years.
+Last Roc Soil show of 2017!
+
+The Palmer Squares: What originally began as an inside joke among high school friends, unexpectedly morphed into a legitimate hip-hop duo that has now garnered praise from some of the most respected veterans in the game. One day after school, despite never having the urge to pen a verse before, Acumental and Term conspired among themselves to poke fun at the prevailing trends. After sharing these ridiculous parodies with their close friends, they were showered with the anticipated laughs, but also received an overwhelming, unexpected response they could have never foreseen: "write more; this is amazing!" Thus, The Palmer Squares were born.
+
+Subsoil: Subsoil is lyric-driven live Hip-Hop music. Known for high-energy live shows, and a keen-edge of razor-sharp lyricism, with equal emphasis on tight grooves and furious improvisations. These traits have earned the band the award for "Best Live Act" in 2010 from the Rochester NY's "Insider-Metromix Magazine" and Subsoil has gained a fan base all over the upstate NY region by their relentless touring throughout the years.
+
 Tickets:
 http://www.ticketweb.com/fb/7771475/funknwaffles </p>
                                     </div>
@@ -1928,7 +1114,7 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="Jazz Is PHSH in Rochester NY"> Jazz Is PHSH in Rochester NY </h3>
+                        <h4 class="event_name" data-toggle="tooltip" title="Jazz Is PHSH with The English Project"> Jazz Is PHSH with The English Project </h3>
                         <hr/>
                         <div class="date">
                             <div class="start_date" data-toggle="tooltip" title="Friday, December 1, 2017">
@@ -1941,7 +1127,7 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
                                 </p>
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
+                                    <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
@@ -1964,20 +1150,20 @@ http://www.ticketweb.com/event/root-shock-wsg-the-saplings-funk-n-waffles-music-
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> Jazz Is PHSH in Rochester NY </h4>
+                                        <h4 class="modal-title"> Jazz Is PHSH with The English Project </h4>
                                         <h6 class="modal-title">
                                             <div class="start_date">
                                                 <span class="weekday">Friday, </span>
                                                 <span class="month">December </span>
                                                 <span class="day">1, </span>
                                                 <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
+                                                <span class="time">8:00PM</span>
                                                 -
-                                                <span class="weekday">Friday, </span>
+                                                <span class="weekday">Saturday, </span>
                                                 <span class="month">December </span>
-                                                <span class="day">1, </span>
+                                                <span class="day">2, </span>
                                                 <span class="year">2017</span>
-                                                <span class="time">11:59PM</span>
+                                                <span class="time">1:00AM</span>
                                             </div>
                                         </h6>
                                     </div>
@@ -2457,7 +1643,7 @@ Event photo by Empire West Photo </p>
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h4 class="event_name" data-toggle="tooltip" title="The English Project CD Release Party"> The English Project CD Release Party </h3>
+                        <h4 class="event_name" data-toggle="tooltip" title="The English Project CD Release Party Volume 1"> The English Project CD Release Party Volume 1 </h3>
                         <hr/>
                         <div class="date">
                             <div class="start_date" data-toggle="tooltip" title="Friday, December 15, 2017">
@@ -2493,7 +1679,7 @@ Event photo by Empire West Photo </p>
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title"> The English Project CD Release Party </h4>
+                                        <h4 class="modal-title"> The English Project CD Release Party Volume 1 </h4>
                                         <h6 class="modal-title">
                                             <div class="start_date">
                                                 <span class="weekday">Friday, </span>
@@ -2519,7 +1705,7 @@ Come help us support one of favorites.
 
 Doors 7
 Music 8
-$ </p>
+$10 </p>
                                     </div>
                                 </div>
                             </div>
@@ -2672,7 +1858,7 @@ http://www.ticketweb.com/event/haewa-pine-needle-soul-and-funk-n-waffles-music-h
                                 </p>
                                 <p>
                                     <span class="glyphicon glyphicon-time"></span>
-                                    <span class="time">9:00PM</span>
+                                    <span class="time">8:00PM</span>
                                 </p>
                             </div>
                         </div>
@@ -2702,13 +1888,13 @@ http://www.ticketweb.com/event/haewa-pine-needle-soul-and-funk-n-waffles-music-h
                                                 <span class="month">December </span>
                                                 <span class="day">16, </span>
                                                 <span class="year">2017</span>
-                                                <span class="time">9:00PM</span>
+                                                <span class="time">8:00PM</span>
                                                 -
-                                                <span class="weekday">Sunday, </span>
+                                                <span class="weekday">Saturday, </span>
                                                 <span class="month">December </span>
-                                                <span class="day">17, </span>
+                                                <span class="day">16, </span>
                                                 <span class="year">2017</span>
-                                                <span class="time">12:00AM</span>
+                                                <span class="time">11:45PM</span>
                                             </div>
                                         </h6>
                                     </div>
