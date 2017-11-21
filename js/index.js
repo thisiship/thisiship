@@ -57,13 +57,13 @@ $(document).ready(function() {
 	});
 
 	$(".desc-btn").click(function() {
-		var event_id = $(this).attr('id');
+		var event_id = $(this).siblings(".ev-id").first().text();
 		console.log("Sending info to GA: "  + event_id);
 		ga('send', 'event', 'Info', 'Description', event_id);
 	});
 	$(".fb-link").click(function() {
-		var event_id = $(this).attr('id');
+		var event_id = $(this).siblings(".ev-id").first().text();
 		console.log("Sending info to GA: " + event_id);
-		ga('send', 'event', 'Info', 'Description', event_id);
+		ga('send', 'event', 'Info', 'Facebook', event_id);
 	});
 });

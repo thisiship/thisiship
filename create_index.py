@@ -120,11 +120,12 @@ def create_event_block(ev_data):
                             <span class="city">{city}</span>, <span class="state">{state}</span>
                         </p>
                         <div hidden class="priority"> {priority} </div>
-                        <button type="button" id="modal-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
+                        <div hidden class="ev-id"> {ev_id} </div>
+                        <button type="button" id="desc-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
                             <span class="glyphicon glyphicon-info-sign"></span>
                             View Details
                         </button>
-                        <a href="http://www.facebook.com/events/{ev_id}" class="btn fb-link" id="fb-{ev_id}" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>"""
+                        <a href="http://www.facebook.com/events/{ev_id}" class="btn fb-link" role="button" target="_blank" data-toggle="tooltip" title="View Event On Facebook"><i class="fa fa-facebook"></i></a>"""
     modal_html ="""
                         <div class="modal fade" id="modal-{ev_id}" tabindex="-1" role="dialog" aria-labelledby="EventDetails">
                             <div class="modal-dialog" role="document">
