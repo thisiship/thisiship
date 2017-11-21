@@ -121,7 +121,7 @@ def create_event_block(ev_data):
                         </p>
                         <div hidden class="priority"> {priority} </div>
                         <div hidden class="ev-id"> {ev_id} </div>
-                        <button type="button" id="desc-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
+                        <button type="button" id="desc-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description" onclick="gtag('send','event','info','desctription',{ev_id});">
                             <span class="glyphicon glyphicon-info-sign"></span>
                             View Details
                         </button>
