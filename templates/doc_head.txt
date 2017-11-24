@@ -33,7 +33,7 @@
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="index.html">This is Hip</a>
+                <a class="navbar-brand" href="/">This is Hip</a>
 				<p class="navbar-text"> Beta </p>
             </div>
 			<!--
