@@ -59,7 +59,7 @@ $(document).ready(function() {
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
 		console.log("Sending info to GA: "  + event_id);
-		gtag('send','event', 'button', 'description', event_id);
+		ga('send','event', 'button', 'description', event_id);
 		console.log("GA Finished");
 	});
 	/* try outbound link 
