@@ -55,7 +55,7 @@ $(document).ready(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
 	});
-
+	/*
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
 		console.log("Sending info to GA: "  + event_id);
