@@ -54,6 +54,11 @@ $(document).ready(function() {
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
+		ga('send','event','button','filter-reset', {
+			hitCallback: function() {
+				console.log('Reset Button Event Sent');
+			}
+		});
 	});
 	/*
 	$(".desc-btn").click(function() {
