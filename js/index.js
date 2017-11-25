@@ -50,11 +50,21 @@ $(document).ready(function() {
 			// this means all the filters are on "All X"
 			event_tags.show();
 		}
+		//send info to GA
+		gtag('event','filter', {
+			'event_label': 'submit',
+			hitCallback: function() {
+				console.log('Submit Button Event Sent');
+			}
+		});
+
 	});
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
-		gtag('event','filter-reset', {
+		//send info to GA
+		gtag('event','filter', {
+			'event_label': 'reset',
 			hitCallback: function() {
 				console.log('Reset Button Event Sent');
 			}
@@ -62,21 +72,22 @@ $(document).ready(function() {
 	});
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
-		console.log("Sending info to GA: "  + event_id);
+		//send info to GA
 		gtag('event', 'description', {
 			'event_label': event_id,
 			hitCallback: function() {
 				console.log('Description for ' + event_id + ' sent to analytics.');
 			}
 		});
-		console.log("GA Finished");
 	});
-	/* try outbound link 
 	$(".fb-link").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text();
-		console.log("Sending info to GA: " + event_id);
-		gtag('send', 'event', 'button', 'facebook', event_id);
-		console.log("GA Finished");
+		//send info to GA
+		gtag('event', 'facebook_link', {
+			'event_label': event_id,
+			hitCallback: function() {
+				console.log('Facebook Link for ' + event_id + ' sent to analytics.');
+			}
+		});
 	});
-	*/
 });
