@@ -64,7 +64,7 @@ $(document).ready(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
 		console.log("Sending info to GA: "  + event_id);
 		gtag('event', 'description', {
-			'value': event_id,
+			'event_label': event_id,
 			hitCallback: function() {
 				console.log('Description for ' + event_id + ' sent to analytics.');
 			}
