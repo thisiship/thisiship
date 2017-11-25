@@ -54,17 +54,20 @@ $(document).ready(function() {
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
-		ga('send','event','button','filter-reset', {
+		gtag('event','filter-reset', {
 			hitCallback: function() {
 				console.log('Reset Button Event Sent');
 			}
 		});
 	});
-	/*
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".ev-id").first().text().trim();
 		console.log("Sending info to GA: "  + event_id);
-		ga('send','event', 'button', 'description', event_id);
+		gtag('event', 'description', event_id, {
+			hitCallback: function() {
+				console.log('Description for ' + event_id + ' sent to analytics.');
+			}
+		});
 		console.log("GA Finished");
 	});
 	/* try outbound link 
