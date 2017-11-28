@@ -32,7 +32,7 @@ if __name__ == "__main__":
         print("Deleting event %s" % event)
         os.remove(event)
 
-    ev_list = set(utils.get_event_list(event_list_loc))
+    ev_list = set(utils.get_disk_list(event_list_loc))
     new_ev_list = ev_list - old_event_ids
     with open(event_list_loc, 'w') as new_event_list:
         for event in new_ev_list:

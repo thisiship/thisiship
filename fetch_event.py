@@ -11,7 +11,7 @@ if __name__ == "__main__":
     event_list_disk = "event_list.txt"
     jsondump_loc = "jsondump/"
     graph = utils.get_facebook_graph()
-    event_list = set(utils.get_event_list(event_list_disk))
+    event_list = set(utils.get_disk_list(event_list_disk))
     for event_id in event_list:
         if (event_id is not None and event_id != ""):
             fb_event = get_event_info(graph, event_id)

@@ -24,12 +24,13 @@ def get_footer():
     foot.close()
     return doc_foot
 
-def get_event_list(event_list_disk):
-    event_list = {}
-    with open(event_list_disk, 'r') as event_list_file:
-        event_list = event_list_file.read().splitlines()
-    event_list_file.close()
-    return event_list
+#this is used to get the data from event,venue,band lists
+def get_disk_list(list_disk_path):
+    disk_list = {}
+    with open(list_disk_path, 'r') as list_file:
+        disk_list = list_file.read().splitlines()
+    list_file.close()
+    return disk_list
 
 def get_facebook_graph():
     f = open('access_token.txt', 'r')
