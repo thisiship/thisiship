@@ -7,7 +7,11 @@ clean:
 create:
 	python create_index.py
 
+discover:
+	python discovery.py
+
 daily:
 	make clean
+	make discover
 	make fetch
 	make create
