@@ -240,7 +240,7 @@ def get_ordered_event_list(event_dict):
     #the time thing- split the time by T and take the first part, which is YYYY-MM-DD
     #this is so it categorizes by day and not time of day. Priority would only work if the time was exact as well
     #   tuple in        get tuples                     order by    start_year          start_month       start_day         prio       name
-    for ev_id in sorted(event_dict.iteritems(), key=lambda (k,v): (v[tag_start_year],v[tag_start_month],v[tag_start_day],v[tag_prio],v[tag_name])):
+    for ev_id in sorted(event_dict.iteritems(), key=lambda (k,v): (int(v[tag_start_year]),int(v[tag_start_month]),int(v[tag_start_day]),int(v[tag_prio]),v[tag_name])):
         #ev_id is the tuple (ev_id, actual event dict)
         ordered_list.append(ev_id[1])
     return ordered_list
