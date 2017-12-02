@@ -15,3 +15,6 @@ daily:
 	make discover
 	make fetch
 	make create
+
+event_count:
+	ls -l jsondump/ | wc -l
