@@ -52,9 +52,11 @@ filters_end_html = """
                         <div id="filter-btns" class="btn-group">
                             <button type="button" id="filter-reset" class="btn btn-primary" data-toggle="tooltip" title="Reset Events">
                                 <span class="glyphicon glyphicon-refresh"></span>
+                                Reset
                             </button>
                             <button type="button" id="filter-submit" class="btn btn-primary" data-toggle="tooltip" title="Apply Filters">
                                 <span class="glyphicon glyphicon-filter"></span>
+                                Filter
                             </button>
                         </div>
                     </div>
