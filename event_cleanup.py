@@ -29,7 +29,6 @@ if __name__ == "__main__":
         event_file.close()
  
     for event in old_event_locs:
-        print("Deleting event %s" % event)
         os.remove(event)
 
     ev_list = set(utils.get_disk_list(event_list_loc))

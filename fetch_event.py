@@ -20,7 +20,7 @@ if __name__ == "__main__":
             event_priority = "9"
 
             if (os.path.exists(new_file_name)):
-                print("Event %s exists. Saving priority." % new_file_name)
+                #print("Event %s exists. Saving priority." % new_file_name)
                 #the file does exist. get priority from it
                 with open(new_file_name, 'r') as existing_file:
                     event_json = json.load(existing_file)
