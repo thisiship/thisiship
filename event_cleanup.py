@@ -39,6 +39,7 @@ if __name__ == "__main__":
     new_event_list.close()
     #if old_event_ids has elements
     if old_event_ids:
+        print("{} events removed.".format(len(old_event_ids)))
         print("Events removed:")
         for event in old_event_ids:
             print(event)
