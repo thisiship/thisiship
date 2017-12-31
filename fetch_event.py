@@ -14,7 +14,13 @@ if __name__ == "__main__":
     event_list = set(utils.get_disk_list(event_list_disk))
     for event_id in event_list:
         if (event_id is not None and event_id != ""):
-            fb_event = get_event_info(graph, event_id)
+            fb_event = {}
+            try:
+                fb_event = get_event_info(graph, event_id)
+            except facebook.GraphAPIError:
+                print("{} is an invalid event. Please remove it from {}".format(event_id,event_list_disk))
+                continue
+
             new_file_name = jsondump_loc  + event_id + '.json'
             #events have default priority 9
             event_priority = "9"
