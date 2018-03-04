@@ -22,6 +22,7 @@ daily:
 
 event_count:
 	ls -l jsondump/ | wc -l
+	cat event_list.txt | wc -l
 
 automatic:
 	git pull
