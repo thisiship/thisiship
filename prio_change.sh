@@ -3,7 +3,7 @@
 PERSONAL_PRIO="8"
 
 echo "Personal Promotion. Set to Priority $PERSONAL_PRIO:"
-for promoted in "elephino" "the english project" "the forest dwellers"
+for promoted in "elephino" "the english project" "the forest dwellers" "the honey smugglers" "honey smugglers"
 do
 	echo $promoted
 	#																	need to use variable here
