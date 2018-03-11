@@ -39,6 +39,8 @@ tag_end_weekday = "end_weekday"
 #with am/pm
 tag_end = "end_time"
 
+tag_event_times = "event_times"
+
 NONE_SPECIFIED = "None Specified"
 
 filters_start_html = """
@@ -179,13 +181,36 @@ def create_event_dict(events_loc):
             ev_json = json.load(event_file)
 
             ev_id = ev_json[tag_id]
-            start_dt_raw = ev_json[tag_start]
 
             ev_name = ev_json[tag_name]
             ev_priority = ev_json[tag_prio]
 
+            start_dt_raw = ev_json[tag_start]
             end_dt_raw = NONE_SPECIFIED
-            if tag_end in ev_json:
+
+            if tag_event_times in ev_json:
+                event_times = ev_json[tag_event_times]
+                #this list comes in in reverse chronological. Reverse it.
+                event_times.reverse()
+                if event_times is None or len(event_times) == 0:
+                    print("Recurring event found with empty {} tag. Omitting event id {}".format(tag_event_times, ev_id))
+                    continue
+
+                current_time = datetime.datetime.now().isoformat()
+                for ev_time in event_times:
+                    ev_start = ev_time[tag_start]
+                    #pick the first event time you find that starts after now
+                    if ev_start > current_time:
+                        start_dt_raw = ev_start
+                        if tag_end in ev_time:
+                            end_dt_raw = ev_time[tag_end]
+
+                        print("Recurring event {} found. Start: {} | End: {} ".format(ev_id,start_dt_raw,end_dt_raw))
+                        #we found the earliest event that happens after today, skip the rest of the event_times
+                        break
+
+
+            if end_dt_raw == NONE_SPECIFIED and tag_end in ev_json:
                 end_dt_raw = ev_json[tag_end]
 
             start_dt = dp.parse(start_dt_raw)
