@@ -71,7 +71,7 @@ $(document).ready(function() {
 		});
 	});
 	$(".desc-btn").click(function() {
-		var event_id = $(this).siblings(".ev-id").first().text().trim();
+		var event_id = $(this).siblings(".fb-link").first().attr("href");
 		//send info to GA
 		gtag('event', 'description', {
 			'event_label': event_id,
@@ -81,12 +81,22 @@ $(document).ready(function() {
 		});
 	});
 	$(".fb-link").click(function() {
-		var event_id = $(this).siblings(".ev-id").first().text();
+		var event_link = $(this).attr("href");
+		console.log(event_link);
 		//send info to GA
 		gtag('event', 'facebook_link', {
-			'event_label': event_id,
+			'event_label': event_link,
 			hitCallback: function() {
-				console.log('Facebook Link for ' + event_id + ' sent to analytics.');
+				console.log(event_link + ' click. Sending to analytics.');
+			}
+		});
+	});
+	$(".promo-link").click(function() {
+		var dest = $(this).attr("href");
+		gtag('event', 'promo_link', {
+			'event_label': dest,
+			hitCallback: function() {
+				console.log('Promotion clicked for ' + dest + ' sent to analytics.');
 			}
 		});
 	});
