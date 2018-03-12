@@ -52,52 +52,42 @@ $(document).ready(function() {
 		}
 		//send info to GA
 		gtag('event','filter', {
-			'event_label': 'submit',
-			hitCallback: function() {
-				console.log('Submit Button Event Sent');
-			}
+			'event_label': 'submit'
 		});
-
+		console.log('Submit Button Event Sent');
 	});
+
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
 		$("#filter-submit").trigger("click");
 		//send info to GA
 		gtag('event','filter', {
-			'event_label': 'reset',
-			hitCallback: function() {
-				console.log('Reset Button Event Sent');
-			}
+			'event_label': 'reset'
 		});
+		console.log('Reset Button Event Sent');
 	});
+
 	$(".desc-btn").click(function() {
 		var event_id = $(this).siblings(".fb-link").first().attr("href");
 		//send info to GA
 		gtag('event', 'description', {
-			'event_label': event_id,
-			hitCallback: function() {
-				console.log('Description for ' + event_id + ' sent to analytics.');
-			}
+			'event_label': event_id
 		});
+		console.log('Description for ' + event_id + ' sent to analytics.');
 	});
 	$(".fb-link").click(function() {
 		var event_link = $(this).attr("href");
-		console.log(event_link);
 		//send info to GA
 		gtag('event', 'facebook_link', {
-			'event_label': event_link,
-			hitCallback: function() {
-				console.log(event_link + ' click. Sending to analytics.');
-			}
+			'event_label': event_link
 		});
+		console.log(event_link + ' click. Sending to analytics.');
 	});
 	$(".promo-link").click(function() {
 		var dest = $(this).attr("href");
 		gtag('event', 'promo_link', {
-			'event_label': dest,
-			hitCallback: function() {
-				console.log('Promotion clicked for ' + dest + ' sent to analytics.');
-			}
+			'event_label': dest
 		});
+		console.log('Promotion clicked for ' + dest + ' sent to analytics.');
 	});
 });
