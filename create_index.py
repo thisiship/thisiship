@@ -275,6 +275,7 @@ def get_ordered_event_list(event_dict):
 if __name__ == "__main__":
     doc_head = utils.get_header()
     doc_foot = utils.get_footer()
+    promo_banner = utils.get_promo_banner()
     event_loc = "jsondump/"
     index_loc = "index.html"
     event_dict = create_event_dict(event_loc)
@@ -297,6 +298,7 @@ if __name__ == "__main__":
     venues_sorted = sorted(venues)
     with open (index_loc, 'w') as new_index:
         new_index.write(doc_head)
+        new_index.write(promo_banner)
         #write the filter bar
         new_index.write(filters_start_html)
         new_index.write(create_content_filter(cities_sorted, tag_city, "All Cities"))
