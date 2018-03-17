@@ -1,4 +1,9 @@
+function occur_on_same_day(filter_date, event_date) {
+	return filter_date.toDateString() === event_date.toDateString();
+}
 $(document).ready(function() {
+	var now_datetime = new Date();
+
 	$("#filter-submit").click(function() {
 		var event_tags = $(".event");
 		filter_option = {};
@@ -73,7 +78,7 @@ $(document).ready(function() {
 		gtag('event', 'description', {
 			'event_label': event_id
 		});
-		console.log('Description for ' + event_id + ' sent to analytics.');
+		console.log('Description Button For Event ' + event_id + ' Sent');
 	});
 	$(".fb-link").click(function() {
 		var event_link = $(this).attr("href");
@@ -81,13 +86,13 @@ $(document).ready(function() {
 		gtag('event', 'facebook_link', {
 			'event_label': event_link
 		});
-		console.log(event_link + ' click. Sending to analytics.');
+		console.log("Facebook: " + event_link + ' Sent.');
 	});
 	$(".promo-link").click(function() {
 		var dest = $(this).attr("href");
 		gtag('event', 'promo_link', {
 			'event_label': dest
 		});
-		console.log('Promotion clicked for ' + dest + ' sent to analytics.');
+		console.log('Promotion clicked for ' + dest + ' Sent');
 	});
 });

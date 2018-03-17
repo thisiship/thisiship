@@ -28,6 +28,7 @@ tag_start_month = "start_month"
 tag_start_month_name = "start_month_name"
 tag_start_day = "start_day"
 tag_start_weekday = "start_weekday"
+tag_start_datetime = "start_datetime"
 #with am/pm
 tag_start = "start_time"
 
@@ -36,6 +37,7 @@ tag_end_month = "end_month"
 tag_end_month_name = "end_month_name"
 tag_end_day = "end_day"
 tag_end_weekday = "end_weekday"
+tag_end_datetime = "end_datetime"
 #with am/pm
 tag_end = "end_time"
 
@@ -98,6 +100,10 @@ def create_event_block(ev_data):
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
+                        <div hidden class="priority"> {priority} </div>
+                        <div hidden class="ev-id"> {ev_id} </div>
+                        <div hidden class="start_datetime"> {start_datetime} </div>
+                        <div hidden class="end_datetime"> {end_datetime} </div>
                         <h4 class="event_name" data-toggle="tooltip" title="{name}"> {name} </h3>
                         <hr/>
                         <div class="date">
@@ -123,8 +129,6 @@ def create_event_block(ev_data):
                             <span class="glyphicon glyphicon-globe"></span>
                             <span class="city">{city}</span>, <span class="state">{state}</span>
                         </p>
-                        <div hidden class="priority"> {priority} </div>
-                        <div hidden class="ev-id"> {ev_id} </div>
                         <button type="button" id="desc-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
                             <span class="glyphicon glyphicon-info-sign"></span>
                             View Details
@@ -165,7 +169,7 @@ def create_event_block(ev_data):
                     </div>
                 </div>
             </div>"""
-    return_html = (thumbnail_html + modal_html).format(name = ev_data[tag_name], start_day = ev_data[tag_start_day], start_month = ev_data[tag_start_month], start_month_name = ev_data[tag_start_month_name], start_year = ev_data[tag_start_year], start_time = ev_data[tag_start], end_day = ev_data[tag_end_day], end_month = ev_data[tag_end_month], end_month_name = ev_data[tag_end_month_name], end_year = ev_data[tag_end_year], end_time = ev_data[tag_end], city = ev_data[tag_city], state = ev_data[tag_state], venue = ev_data[tag_venue], priority = ev_data[tag_prio], ev_id = ev_data[tag_id], desc = ev_data[tag_desc], start_weekday = ev_data[tag_start_weekday], end_weekday = ev_data[tag_end_weekday])
+    return_html = (thumbnail_html + modal_html).format(name = ev_data[tag_name], start_day = ev_data[tag_start_day], start_month = ev_data[tag_start_month], start_month_name = ev_data[tag_start_month_name], start_year = ev_data[tag_start_year], start_time = ev_data[tag_start], end_day = ev_data[tag_end_day], end_month = ev_data[tag_end_month], end_month_name = ev_data[tag_end_month_name], end_year = ev_data[tag_end_year], end_time = ev_data[tag_end], city = ev_data[tag_city], state = ev_data[tag_state], venue = ev_data[tag_venue], priority = ev_data[tag_prio], ev_id = ev_data[tag_id], desc = ev_data[tag_desc], start_weekday = ev_data[tag_start_weekday], end_weekday = ev_data[tag_end_weekday], start_datetime = ev_data[tag_start_datetime], end_datetime = ev_data[tag_end_datetime])
 
     return return_html
 
@@ -220,6 +224,7 @@ def create_event_dict(events_loc):
             ev_start_year = str(start_dt.year)
             ev_start_weekday = start_dt.strftime("%A")
             ev_start = start_dt.strftime("%-I:%M%p")
+            ev_start_datetime = start_dt_raw
 
             if (end_dt_raw == NONE_SPECIFIED):
                 ev_end_day = NONE_SPECIFIED
@@ -228,6 +233,7 @@ def create_event_dict(events_loc):
                 ev_end_year = NONE_SPECIFIED
                 ev_end_weekday = NONE_SPECIFIED
                 ev_end = NONE_SPECIFIED
+                ev_end_datetime = NONE_SPECIFIED
             
             else:
                 end_dt = dp.parse(end_dt_raw)
@@ -237,6 +243,7 @@ def create_event_dict(events_loc):
                 ev_end_year = str(end_dt.year)
                 ev_end_weekday = end_dt.strftime("%A")
                 ev_end = end_dt.strftime("%-I:%M%p")
+                ev_end_datetime = end_dt_raw
             
             ev_desc = NONE_SPECIFIED
             if tag_desc in ev_json:
@@ -255,7 +262,7 @@ def create_event_dict(events_loc):
                         #note: venue lives at place -> name
                         ev_venue = ev_json[tag_place][tag_name]
 
-            ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc, tag_start_year : ev_start_year, tag_start_month : ev_start_month, tag_start_day : ev_start_day, tag_start_weekday: ev_start_weekday, tag_end_year : ev_end_year, tag_end_month : ev_end_month, tag_end_day : ev_end_day, tag_end_weekday : ev_end_weekday, tag_start_month_name : ev_start_month_name, tag_end_month_name : ev_end_month_name}
+            ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc, tag_start_year : ev_start_year, tag_start_month : ev_start_month, tag_start_day : ev_start_day, tag_start_weekday: ev_start_weekday, tag_end_year : ev_end_year, tag_end_month : ev_end_month, tag_end_day : ev_end_day, tag_end_weekday : ev_end_weekday, tag_start_month_name : ev_start_month_name, tag_end_month_name : ev_end_month_name, tag_start_datetime : ev_start_datetime, tag_end_datetime : ev_end_datetime}
             event_dict[ev_id] = ev_data
 
         event_file.close()
