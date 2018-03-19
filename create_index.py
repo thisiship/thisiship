@@ -50,6 +50,9 @@ filters_start_html = """
         <div class="panel">
             <div class="panel-body">
                 <div class="row">
+                    <div class="col-sm-3 filter-column">
+                        <input type="date" id="filter-by-date" class="filter-master">
+                    </div>
 """
 filters_end_html = """
                     <div class="pull-right">
@@ -82,7 +85,7 @@ def create_content_filter(filter_list, filter_on, default_option):
     return_html = start_html
     for filter_item in filter_list:
         return_html += """
-                            <option>""" + filter_item + "</option>" 
+                            <option>{}</option>""".format(filter_item)
     return_html += end_html
     return return_html
 
@@ -100,10 +103,10 @@ def create_event_block(ev_data):
             <div class="col-sm-6 col-md-4 col-lg-3 event">
                 <div class="thumbnail">
                     <div class="caption">
-                        <div hidden class="priority"> {priority} </div>
-                        <div hidden class="ev-id"> {ev_id} </div>
-                        <div hidden class="start_datetime"> {start_datetime} </div>
-                        <div hidden class="end_datetime"> {end_datetime} </div>
+                        <div hidden class="priority" value="{priority}"></div>
+                        <div hidden class="ev-id" value="{ev_id}"></div>
+                        <div hidden class="start_datetime" value="{start_datetime}"></div>
+                        <div hidden class="end_datetime" value="{end_datetime}"></div>
                         <h4 class="event_name" data-toggle="tooltip" title="{name}"> {name} </h3>
                         <hr/>
                         <div class="date">

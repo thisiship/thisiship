@@ -1,29 +1,36 @@
 function occur_on_same_day(filter_date, event_date) {
 	return filter_date.toDateString() === event_date.toDateString();
 }
+function show_all_events() {
+	$(".event").show();
+}
 $(document).ready(function() {
 	var now_datetime = new Date();
 
 	$("#filter-submit").click(function() {
+		//$("#filter-by-date").val()
+		$(".filter-master").each(function () {
+			alert($(this).val());
+		});
 		var event_tags = $(".event");
 		filter_option = {};
 		$("#city-filter option:selected").each(function() {
-			city = $(this).text().trim();
-			if (city !== "All Cities") {
+			city = $(this).val();
+			if (city != 0 ) {
 				filter_option.city = city;
 			}
 		});
 
 		$("#state-filter option:selected").each(function() {
-			state = $(this).text().trim();
-			if (state !== "All States") {
+			state = $(this).val();
+			if (state != 0) {
 				filter_option.state = state;
 			}
 		});
 
 		$("#venue-filter option:selected").each(function() {
-			venue = $(this).text().trim();
-			if (venue !== "All Venues") {
+			venue = $(this).val();
+			if (venue != 0) {
 				filter_option.venue = venue;
 			}
 		});
@@ -34,6 +41,7 @@ $(document).ready(function() {
 				city_match = true;
 				state_match = true;
 				venue_match = true;
+				date_match = true;
 				var $this = $(this);
 				if ("city" in filter_option) {
 					city_match = $this.find(".city").text().trim() === filter_option.city; 
@@ -47,13 +55,17 @@ $(document).ready(function() {
 					venue_match = $this.find(".venue").text().trim() === filter_option.venue;
 				}
 
-				if (city_match && state_match && venue_match) {
+				if("date" in filter_option) {
+					date_match = occur_on_same_day(filter_option.date, $this.find(".start_datetime").val())
+				}
+
+				if (city_match && state_match && venue_match && date_match) {
 					$(this).show();
 				}
 			});
 		} else {
 			// this means all the filters are on "All X"
-			event_tags.show();
+			show_all_events();
 		}
 		//send info to GA
 		gtag('event','filter', {
@@ -64,7 +76,7 @@ $(document).ready(function() {
 
 	$("#filter-reset").click(function() {
 		$(".filter-master").val('0');
-		$("#filter-submit").trigger("click");
+		show_all_events();
 		//send info to GA
 		gtag('event','filter', {
 			'event_label': 'reset'
