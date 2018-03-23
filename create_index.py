@@ -18,6 +18,7 @@ tag_desc = "description"
 
 tag_place = "place"
 tag_loc = "location"
+tag_locale = "locale"
 tag_city = "city"
 tag_state = "state"
 #note: the venue tag in the data is at place -> name. this is use for ev_data key
@@ -50,20 +51,17 @@ filters_start_html = """
         <div class="panel">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-3 filter-column">
-                        <input type="date" id="filter-by-date" class="filter-master">
+                    <div class="col-sm-4 filter-column">
+                        <input type="date" id="filter-date" class="filter-master form-control" data-target="{}" title="Choose a Start Date">
                     </div>
-"""
+""".format(tag_start_datetime)
+
 filters_end_html = """
                     <div class="pull-right">
                         <div id="filter-btns" class="btn-group">
                             <button type="button" id="filter-reset" class="btn btn-primary" data-toggle="tooltip" title="Reset Events">
                                 <span class="glyphicon glyphicon-refresh"></span>
                                 Reset
-                            </button>
-                            <button type="button" id="filter-submit" class="btn btn-primary" data-toggle="tooltip" title="Apply Filters">
-                                <span class="glyphicon glyphicon-filter"></span>
-                                Filter
                             </button>
                         </div>
                     </div>
@@ -75,8 +73,8 @@ filters_end_html = """
 
 def create_content_filter(filter_list, filter_on, default_option):
     start_html = """
-                    <div class="col-sm-3 filter-column">
-                        <select id="{0}-filter" class="form-control filter-master" data-toggle="tooltip" title="Choose a {2}">
+                    <div class="col-sm-4 filter-column">
+                        <select id="filter-{0}" class="form-control filter-master" data-toggle="tooltip" data-target={0} title="Choose a {2}">
                             <option value="0" selected="selected">{1}</option>""".format(filter_on, default_option,filter_on.capitalize())
     end_html = """
                         </select>
@@ -85,7 +83,7 @@ def create_content_filter(filter_list, filter_on, default_option):
     return_html = start_html
     for filter_item in filter_list:
         return_html += """
-                            <option>{}</option>""".format(filter_item)
+                            <option value="{1}">{0}</option>""".format(filter_item, filter_item.lower())
     return_html += end_html
     return return_html
 
@@ -107,6 +105,7 @@ def create_event_block(ev_data):
                         <div hidden class="ev-id" value="{ev_id}"></div>
                         <div hidden class="start_datetime" value="{start_datetime}"></div>
                         <div hidden class="end_datetime" value="{end_datetime}"></div>
+                        <div hidden class="locale" value="{locale}"></div>
                         <h4 class="event_name" data-toggle="tooltip" title="{name}"> {name} </h3>
                         <hr/>
                         <div class="date">
@@ -124,13 +123,13 @@ def create_event_block(ev_data):
                                 </p>
                             </div>
                         </div>
-                        <p class="venue" data-toggle="tooltip" title="{venue}">
+                        <p class="venue" data-toggle="tooltip" title="{venue}" value="{venue}">
                             <span class="glyphicon glyphicon-flag"></span>
                             {venue}
                         </p>
                         <p class="location"> 
                             <span class="glyphicon glyphicon-globe"></span>
-                            <span class="city">{city}</span>, <span class="state">{state}</span>
+                            <span class="city" value="{city}">{city}</span>, <span class="state" value="{state}">{state}</span>
                         </p>
                         <button type="button" id="desc-{ev_id}" class="btn desc-btn" data-toggle="modal" data-target="#modal-{ev_id}" data-toggle="tooltip" title="View Event Description">
                             <span class="glyphicon glyphicon-info-sign"></span>
@@ -172,7 +171,7 @@ def create_event_block(ev_data):
                     </div>
                 </div>
             </div>"""
-    return_html = (thumbnail_html + modal_html).format(name = ev_data[tag_name], start_day = ev_data[tag_start_day], start_month = ev_data[tag_start_month], start_month_name = ev_data[tag_start_month_name], start_year = ev_data[tag_start_year], start_time = ev_data[tag_start], end_day = ev_data[tag_end_day], end_month = ev_data[tag_end_month], end_month_name = ev_data[tag_end_month_name], end_year = ev_data[tag_end_year], end_time = ev_data[tag_end], city = ev_data[tag_city], state = ev_data[tag_state], venue = ev_data[tag_venue], priority = ev_data[tag_prio], ev_id = ev_data[tag_id], desc = ev_data[tag_desc], start_weekday = ev_data[tag_start_weekday], end_weekday = ev_data[tag_end_weekday], start_datetime = ev_data[tag_start_datetime], end_datetime = ev_data[tag_end_datetime])
+    return_html = (thumbnail_html + modal_html).format(name = ev_data[tag_name], start_day = ev_data[tag_start_day], start_month = ev_data[tag_start_month], start_month_name = ev_data[tag_start_month_name], start_year = ev_data[tag_start_year], start_time = ev_data[tag_start], end_day = ev_data[tag_end_day], end_month = ev_data[tag_end_month], end_month_name = ev_data[tag_end_month_name], end_year = ev_data[tag_end_year], end_time = ev_data[tag_end], city = ev_data[tag_city], state = ev_data[tag_state], venue = ev_data[tag_venue], priority = ev_data[tag_prio], ev_id = ev_data[tag_id], desc = ev_data[tag_desc], start_weekday = ev_data[tag_start_weekday], end_weekday = ev_data[tag_end_weekday], start_datetime = ev_data[tag_start_datetime], end_datetime = ev_data[tag_end_datetime], locale = ev_data[tag_locale])
 
     return return_html
 
@@ -227,7 +226,7 @@ def create_event_dict(events_loc):
             ev_start_year = str(start_dt.year)
             ev_start_weekday = start_dt.strftime("%A")
             ev_start = start_dt.strftime("%-I:%M%p")
-            ev_start_datetime = start_dt_raw
+            ev_start_datetime = start_dt.date().isoformat()
 
             if (end_dt_raw == NONE_SPECIFIED):
                 ev_end_day = NONE_SPECIFIED
@@ -246,7 +245,7 @@ def create_event_dict(events_loc):
                 ev_end_year = str(end_dt.year)
                 ev_end_weekday = end_dt.strftime("%A")
                 ev_end = end_dt.strftime("%-I:%M%p")
-                ev_end_datetime = end_dt_raw
+                ev_end_datetime = end_dt.date().isoformat()
             
             ev_desc = NONE_SPECIFIED
             if tag_desc in ev_json:
@@ -255,6 +254,7 @@ def create_event_dict(events_loc):
             ev_city = NONE_SPECIFIED
             ev_state = NONE_SPECIFIED
             ev_venue = NONE_SPECIFIED
+            ev_locale = NONE_SPECIFIED
             if tag_place in ev_json:
                 if tag_loc in ev_json[tag_place]:
                     if tag_city in ev_json[tag_place][tag_loc]:
@@ -265,7 +265,9 @@ def create_event_dict(events_loc):
                         #note: venue lives at place -> name
                         ev_venue = ev_json[tag_place][tag_name]
 
-            ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc, tag_start_year : ev_start_year, tag_start_month : ev_start_month, tag_start_day : ev_start_day, tag_start_weekday: ev_start_weekday, tag_end_year : ev_end_year, tag_end_month : ev_end_month, tag_end_day : ev_end_day, tag_end_weekday : ev_end_weekday, tag_start_month_name : ev_start_month_name, tag_end_month_name : ev_end_month_name, tag_start_datetime : ev_start_datetime, tag_end_datetime : ev_end_datetime}
+                    ev_locale = "{}, {}".format(ev_city, ev_state)
+
+            ev_data = {tag_name : ev_name, tag_start : ev_start, tag_end : ev_end, tag_city : ev_city, tag_state : ev_state, tag_venue : ev_venue, tag_id : ev_id, tag_prio : ev_priority, tag_desc : ev_desc, tag_start_year : ev_start_year, tag_start_month : ev_start_month, tag_start_day : ev_start_day, tag_start_weekday: ev_start_weekday, tag_end_year : ev_end_year, tag_end_month : ev_end_month, tag_end_day : ev_end_day, tag_end_weekday : ev_end_weekday, tag_start_month_name : ev_start_month_name, tag_end_month_name : ev_end_month_name, tag_start_datetime : ev_start_datetime, tag_end_datetime : ev_end_datetime, tag_locale : ev_locale}
             event_dict[ev_id] = ev_data
 
         event_file.close()
@@ -294,25 +296,22 @@ if __name__ == "__main__":
     for event in events_ordered:
         event_blocks.append(create_event_block(event))
 
-    cities = set()
-    states = set()
+    locations = set()
     venues = set()
     #get all cities, states, venues for filtering purposes
     for event in event_dict:
-        cities.add(event_dict[event][tag_city])
-        states.add(event_dict[event][tag_state])
+        loc = "{}, {}".format(event_dict[event][tag_city], event_dict[event][tag_state])
+        locations.add(loc)
         venues.add(event_dict[event][tag_venue])
         
-    cities_sorted = sorted(cities)
-    states_sorted = sorted(states)
     venues_sorted = sorted(venues)
+    locations_sorted = sorted(locations)
     with open (index_loc, 'w') as new_index:
         new_index.write(doc_head)
         new_index.write(promo_banner)
         #write the filter bar
         new_index.write(filters_start_html)
-        new_index.write(create_content_filter(cities_sorted, tag_city, "All Cities"))
-        new_index.write(create_content_filter(states_sorted, tag_state, "All States"))
+        new_index.write(create_content_filter(locations_sorted, tag_locale, "All Locations"))
         new_index.write(create_content_filter(venues_sorted, tag_venue, "All Venues"))
         new_index.write(filters_end_html)
         #start the event block
