@@ -1,18 +1,14 @@
 fetch:
-	date >> logs/fetch.log
-	python fetch_event.py >> logs/fetch.log
+	python fetch_event.py
 
 clean:
-	date >> logs/clean.log
-	python event_cleanup.py >> logs/clean.log
+	python event_cleanup.py
 
 create:
-	date >> logs/create.log
-	python create_index.py >> logs/create.log
+	python create_index.py
 
 discover:
-	date >> logs/discover.log
-	python discovery.py >> logs/discover.log
+	python discovery.py
 
 daily:
 	make clean

@@ -3,9 +3,14 @@ import json
 import sys
 import datetime
 import dateutil.parser as dp
+import logging
+
 import utils
 
 if __name__ == "__main__":
+    logging.basicConfig(filename=utils.get_logfile(), level=utils.log_level)
+    utils.log_intro(__file__)
+
     event_loc = "jsondump/"
     event_list_loc = "event_list.txt"
     current_time = datetime.datetime.now()
@@ -39,7 +44,7 @@ if __name__ == "__main__":
     new_event_list.close()
     #if old_event_ids has elements
     if old_event_ids:
-        print("{} events removed:".format(len(old_event_ids)))
+        logging.info("{} events removed:".format(len(old_event_ids)))
         for event in old_event_ids:
-            print(event)
+            logging.info(event)
     

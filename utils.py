@@ -2,12 +2,16 @@ import json
 import sys
 import os
 import facebook
+import datetime
 
+import logging
 
-template_dir = "templates/"
+template_dir = "templates"
+log_dir = "logs"
+log_level = logging.INFO
 
 """
-the next 3 are duplicates. need to abstract it out
+the next 3 methods are duplicates. need to abstract it out
 enum?
 constants?
 """
@@ -54,3 +58,10 @@ def get_facebook_graph():
     graph = facebook.GraphAPI(access_token=access_token)
     return graph
 
+def get_logfile():
+    date_today = datetime.date.today().isoformat()
+    logfile_name = os.path.join(log_dir, date_today) + ".log"
+    return logfile_name
+
+def log_intro(parent_script):
+    logging.info("{}:{}:".format(datetime.datetime.now().isoformat(),parent_script))

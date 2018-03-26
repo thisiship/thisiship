@@ -5,6 +5,7 @@ import os
 from sets import Set
 import datetime
 import dateutil.parser as dp
+import logging
 
 import utils
 #make all strings utf-8 encoding for whole script
@@ -199,7 +200,7 @@ def create_event_dict(events_loc):
                 #this list comes in in reverse chronological. Reverse it.
                 event_times.reverse()
                 if event_times is None or len(event_times) == 0:
-                    print("Recurring event found with empty {} tag. Omitting event id {}".format(tag_event_times, ev_id))
+                    logging.info("Recurring event found with empty {} tag. Omitting event id {}".format(tag_event_times, ev_id))
                     continue
 
                 current_time = datetime.datetime.now().isoformat()
@@ -211,7 +212,7 @@ def create_event_dict(events_loc):
                         if tag_end in ev_time:
                             end_dt_raw = ev_time[tag_end]
 
-                        print("Recurring event {} found. Start: {} | End: {} ".format(ev_id,start_dt_raw,end_dt_raw))
+                        logging.debug("Recurring event {} found. Start: {} | End: {} ".format(ev_id,start_dt_raw,end_dt_raw))
                         #we found the earliest event that happens after today, skip the rest of the event_times
                         break
 
@@ -285,6 +286,9 @@ def get_ordered_event_list(event_dict):
     return ordered_list
 
 if __name__ == "__main__":
+    logging.basicConfig(filename=utils.get_logfile(), level=utils.log_level)
+    utils.log_intro(__file__) 
+
     doc_head = utils.get_header()
     doc_foot = utils.get_footer()
     promo_banner = utils.get_promo_banner()
