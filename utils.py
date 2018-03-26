@@ -9,6 +9,7 @@ import logging
 template_dir = "templates"
 log_dir = "logs"
 log_level = logging.INFO
+default_event_priority = "9"
 
 """
 the next 3 methods are duplicates. need to abstract it out
@@ -50,6 +51,12 @@ def get_disk_list(list_disk_path):
         disk_list = list_file.read().splitlines()
     list_file.close()
     return disk_list
+
+def overwrite_disk_list(list_disk_path, new_disk_list):
+    with open(list_disk_path, 'w') as new_disk_list_file:
+        for item in new_disk_list:
+            new_disk_list_file.write(item + "\n")
+    new_disk_list_file.close()
 
 def get_facebook_graph():
     f = open('access_token.txt', 'r')

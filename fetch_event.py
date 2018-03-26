@@ -14,21 +14,25 @@ if __name__ == "__main__":
     utils.log_intro(__file__)
 
     event_list_disk = "event_list.txt"
-    jsondump_loc = "jsondump/"
+    jsondump_loc = "jsondump"
     graph = utils.get_facebook_graph()
     event_list = set(utils.get_disk_list(event_list_disk))
+    valid_event = False
+    invalid_event_ids_to_delete = []
     for event_id in event_list:
         if (event_id is not None and event_id != ""):
+            new_file_name = os.path.join(jsondump_loc, event_id) + '.json'
+ 
             fb_event = {}
             try:
                 fb_event = get_event_info(graph, event_id)
+                valid_event = True
             except facebook.GraphAPIError:
-                logging.warning("{} is an invalid event. Please remove it from {}".format(event_id,event_list_disk))
+                valid_event = False
+                invalid_event_ids_to_delete.append(event_id)
                 continue
 
-            new_file_name = jsondump_loc  + event_id + '.json'
-            #events have default priority 9
-            event_priority = "9"
+            event_priority = utils.default_event_priority
 
             if (os.path.exists(new_file_name)):
                 #the file does exist. get priority from it
@@ -45,3 +49,13 @@ if __name__ == "__main__":
                 json.dump(fb_event, event_json_file)
 
             event_json_file.close()
+
+    if len(invalid_event_ids_to_delete) > 0:
+        invalid_event_ids_to_delete = set(invalid_event_ids_to_delete)
+        new_event_list = event_list - invalid_event_ids_to_delete
+        utils.overwrite_disk_list(event_list_disk,new_event_list)
+        for event_id in invalid_event_ids_to_delete:
+            json_file_loc = os.path.join(jsondump_loc, event_id) + '.json'
+            if os.path.exists(json_file_loc):
+                os.remove(json_file_loc)
+            logging.info("{} is an invalid event. Removed it from {}".format(event_id,event_list_disk))

@@ -31,7 +31,4 @@ if __name__ == "__main__":
     total_events_added = length_no_dupes - length_orig
     logging.info("Discovery added {} new events to {}".format(total_events_added, event_list_file))
     
-    with open(event_list_file, 'w') as new_event_list:
-        for event in event_list:
-            new_event_list.write(event + "\n")
-    new_event_list.close()
+    utils.overwrite_disk_list(event_list_file, event_list)

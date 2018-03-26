@@ -38,10 +38,8 @@ if __name__ == "__main__":
 
     ev_list = set(utils.get_disk_list(event_list_loc))
     new_ev_list = ev_list - old_event_ids
-    with open(event_list_loc, 'w') as new_event_list:
-        for event in new_ev_list:
-            new_event_list.write(event + "\n")
-    new_event_list.close()
+    utils.overwrite_disk_list(event_list_loc, new_ev_list)
+
     #if old_event_ids has elements
     if old_event_ids:
         logging.info("{} events removed:".format(len(old_event_ids)))
