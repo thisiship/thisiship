@@ -20,6 +20,9 @@ event_count:
 	ls -l jsondump/ | wc -l
 	cat event_list.txt | wc -l
 
+prio_change:
+	sh prio_change.sh
+
 automatic:
 	git pull
 	make daily
