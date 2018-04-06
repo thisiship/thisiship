@@ -11,14 +11,13 @@ if __name__ == "__main__":
     logging.basicConfig(filename=utils.get_logfile(), level=utils.log_level)
     utils.log_intro(__file__)
 
-    event_loc = "jsondump/"
-    event_list_loc = "event_list.txt"
+    event_loc = utils.jsondump_dir
     current_time = datetime.datetime.now()
     list_of_events = os.listdir(event_loc)
     old_event_ids = set()
     old_event_locs = []
     for event in list_of_events:
-        event_path = event_loc + event
+        event_path = os.path.join(event_loc, event)
         with open(event_path) as event_file:
             ev_json = json.load(event_file)
             ev_id = ev_json["id"]
@@ -35,10 +34,6 @@ if __name__ == "__main__":
  
     for event in old_event_locs:
         os.remove(event)
-
-    ev_list = set(utils.get_disk_list(event_list_loc))
-    new_ev_list = ev_list - old_event_ids
-    utils.overwrite_disk_list(event_list_loc, new_ev_list)
 
     #if old_event_ids has elements
     if old_event_ids:

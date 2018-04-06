@@ -1,6 +1,3 @@
-fetch:
-	python fetch_event.py
-
 clean:
 	python event_cleanup.py
 
@@ -13,19 +10,14 @@ discover:
 daily:
 	make clean
 	make discover
-	make fetch
 	make create
 
 event_count:
 	ls -l jsondump/ | wc -l
-	cat event_list.txt | wc -l
-
-prio_change:
-	sh prio_change.sh
 
 automatic:
 	git pull
 	make daily
-	git add index.html event_list.txt
+	git add index.html
 	git commit -m "daily run"
 	git push
