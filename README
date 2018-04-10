@@ -1,0 +1,9 @@
+Things to do to get this running:
+Generate a new access token at: https://developers.facebook.com/tools/explorer/
+Debug the access token -> extend access token
+echo "your access token" > access_token.txt
+pip install --user virtualenvwrapper
+mkvirtualenv thisiship
+workon thisiship
+pip install facebook-sdk
+pip install python-dateutil
