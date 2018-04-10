@@ -1,4 +1,4 @@
-jsondump/
-logs/
+jsondump/*
+logs/*
 utils.pyc
 notes.txt
