@@ -39,8 +39,10 @@ if __name__ == "__main__":
                 event.update({priority: new_priority, page_owners: owners_list})
                 all_events[ev_id] = event
 
+            logging.debug("Current number of events: {}".format(len(all_events)))
+
             try:
-                if "next" in event_list["paging"]:
+                if 'next' in event_list['paging']:
                     next_request = event_list['paging']['next']
                     logging.debug("Traversing next page for page: {}".format(page))
                     logging.debug("Next page: {}".format(next_request))
