@@ -1,4 +1,1 @@
-jsondump/*
-logs/*
-utils.pyc
-notes.txt
+__pycache__
