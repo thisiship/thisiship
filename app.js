@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 /*
 const productRoutes = require('./api/routes/products');
-const orderRoutes = require('./api/routes/orders');
 */
 const userRoutes = require('./api/routes/user');
+const eventRoutes = require('./api/routes/events');
 
 mongoose.connect(
   `mongodb+srv://tonisbones:${process.env.MONGO_ATLAS_PW}@thisiship-5gtlj.mongodb.net/thisiship?retryWrites=true`,
@@ -36,9 +36,9 @@ app.use((res, req, next) => {
 // routes
 /*
 app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
 */
 app.use('/user', userRoutes)
+app.use('/events', eventRoutes);
 
 // handle any requests that aren't mapped in any routers 
 app.use((req, res, next) => {
