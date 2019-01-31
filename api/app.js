@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
 /*
 const productRoutes = require('./api/routes/products');
 */
-const userRoutes = require('./api/routes/user');
-const eventRoutes = require('./api/routes/events');
+const userRoutes = require('./routes/user');
+const eventRoutes = require('./routes/events');
 
 mongoose.connect(
   `mongodb+srv://tonisbones:${process.env.MONGO_ATLAS_PW}@thisiship-5gtlj.mongodb.net/thisiship?retryWrites=true`,
