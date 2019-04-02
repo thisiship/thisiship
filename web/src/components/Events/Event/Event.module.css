@@ -1,0 +1,15 @@
+.Event {
+  border: 1px solid #ccc;
+  background-color: #eee;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 8px;
+  flex: 0 1 40%;
+  margin: 1em;
+}
+
+.Title {
+  height: 20px;
+  overflow: ellipsis;
+}
+
