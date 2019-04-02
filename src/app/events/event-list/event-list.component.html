@@ -1,7 +1,0 @@
-<h3>Event List</h3>
-<div *ngFor="let event of events">
-  <h4>{{ event.title }}</h4>
-  <p>{{ event.description }}</p>
-  <p>{{ event.startDate | date:'medium' }} - {{ event.endDate | date:'medium' }}</p>
-  <p>Price: {{ event.price | currency }}</p>
-</div>
