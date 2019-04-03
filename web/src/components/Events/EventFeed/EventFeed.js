@@ -2,14 +2,10 @@ import React, { useEffect, useReducer } from 'react';
 import axios from 'axios';
 
 import Event from '../Event/Event';
-import { useFormInput } from '../../../hooks/forms';
 import classes from './EventFeed.module.css';
+import CreateEvent from '../CreateEvent/CreateEvent';
 
 const eventFeed = (props) => {
-  const titleInput = useFormInput();
-  const priceInput = useFormInput();
-  const venueInput = useFormInput();
-
   const eventFeedReducer = (state, action) => {
     switch(action.type) {
       case 'ADD':
@@ -25,37 +21,6 @@ const eventFeed = (props) => {
 
   const [eventFeed, dispatch] = useReducer(eventFeedReducer, []);
 
-  const createEventHandler = () => {
-    const eventTitle = titleInput.value;
-    const eventPrice = priceInput.value;
-    const eventVenue = venueInput.value;
-    axios.post('https://mock-thisiship.firebaseio.com/events.json', {
-      title: eventTitle,
-      price: eventPrice,
-      venue: eventVenue,
-      userId: 'tonisbones',
-    })
-    .then((response) => {
-      console.log(response);
-      const eventData = response.data;
-      const events = [];
-      for (let key in eventData) {
-        events.push({
-          id: key,
-          title: eventTitle,
-          venue: eventVenue,
-          price: eventPrice,
-        });
-      }
-      dispatch({
-        type: 'ADD',
-        payload: events,
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-  };
 
   useEffect(() => {
     axios.get('https://mock-thisiship.firebaseio.com/events.json')
@@ -89,25 +54,7 @@ const eventFeed = (props) => {
             venue={event.venue} />
         ))}
       </div>
-      <h4>Create Event</h4>
-      <input
-        type="text"
-        placeholder="Event Title"
-        onChange={titleInput.onChange}
-        value={titleInput.value} />
-      <input
-        type="text"
-        placeholder="Event Price"
-        onChange={priceInput.onChange}
-        value={priceInput.value} />
-      <input
-        type="text"
-        placeholder="Event Venue"
-        onChange={venueInput.onChange}
-        value={venueInput.value} />
-      <button
-        type="button"
-        onClick={createEventHandler}>Create Event</button>
+      <CreateEvent dispatch={dispatch}/>
     </div>
   )
 };
