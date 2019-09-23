@@ -1,0 +1,180 @@
+thisiship
+
+- a place for musicians to share their work and connect with fans
+- a place for music fans to follow their favorite bands
+- a place for venues to work with musicians to bring people together
+
+profile
+  as a musician I want to be able to have a homepage for my fans
+    I want to be able to arrange it how I please
+    I want to be able to share a variety of different things
+      music
+        spotify playlist
+        youtube/vimeo videos
+        apple music link
+      social media
+        facebook
+        twitter feed
+        instagram feed
+      blog posts - maybe not
+      events
+      about
+        roster
+        bio
+        hometown
+      genres
+
+example profile.json
+{
+  id: 12345,
+  username: theforestdwellers, // this is a key to auth table (email/pass_hash)
+  admin: [
+    tonisbones,
+    joebro,
+    koshersnack,
+    jgreene
+  ]
+  about: {
+    bio: "Roots/Folk/Reggae group",
+    hometown: 'Rochester',
+    roster: [
+      {
+        username: tonisbones,
+        roles: [
+          bass,
+          harmony
+        ]
+      },
+      {
+        username: joebro,
+        roles: [
+          guitar,
+          lead vocals
+        ]
+      }
+    ]
+  },
+  events: [ // keys to events table
+    event_id_0,
+    event_id_1,
+    event_id_2,
+  ],
+  blogPosts: [ // keys to blog table
+    blog_post_id_0,
+    blog_post_id_1,
+    blog_post_id_2,
+  ],
+  followers: [
+    tonisbones,
+    roxymegs,
+  ],
+  following: [
+    tonisbones,
+    giantpandadub,
+  ],
+  social: {
+    facebook: {
+      pageUrl: www.facebook.com/theforestdwellers585,
+    }
+    instagram: {
+      pageUrl: www.instagram.com/...
+    }
+    twitter: {
+      pageUrl: www.twitter.com...,
+    },
+    youtube: {
+      pageUrl: www.youtube.com/...,
+      videos: [ // this could represent any saved videos
+        www.youtube.com/00,
+        www.youtube.com/01,
+        www.youtube.com/02,
+      ]
+    },
+    spotify: {
+      pageUrl: open.spotify.com/...,
+      playlist: embed_playlist_link_or_whatever
+    },
+    apple: {
+      pageUrl: www.itunes.blah,
+      playlist: embed_playlist_link_or_whatever
+    }
+  },
+  pageLayout: [ // this is an ordering of widgets for their page
+    {
+      widgetType: event,
+      limit: 1,
+      sort: upcoming,
+    },
+    {
+      widgetType: blog,
+      limit: 1,
+      sort: latest,
+    },
+    {
+      widgetType: about,
+    },
+    {
+      widgetType: video,
+      link: www.youtube.com/00,
+    },
+    {
+      widgetType: playlist,
+      link: www.open.spotify...,
+    },
+  ],
+  genres: [
+    {
+      name: reggae,
+      endorsedBy: [
+        @tonisbones,
+        @roxymegs,
+        @decause
+      ],
+    },
+    {
+      name: folk,
+      endorsedBy: [
+        @tonisbones,
+        @roxymegs,
+        @decause,
+        @joebro
+      ],
+    }
+  ]
+}
+
+example event.json:
+{
+  title: The Skints / The Forest Dwellers,
+  venue: @anthology,
+  price: 20,
+  description: Come check out these awesome bands!,
+  bands: [
+    @theforestdwellers,
+    @theskints,
+  ],
+  doors: date,
+  creator: @tonisbones,
+  sharedBy: [
+    @account1,
+    @account2,
+  ],
+  hipVotes: [
+    @account3,
+    @account4
+  ],
+  setTimes: [
+    {
+      start: date,
+      end: date,
+      band: @theforestdwellers
+    },
+  ],
+}
+
+example blogpost.json:
+{
+  title: My first blog post,
+  creator: tonisbones,
+  content: really long text. blah blah blah
+}
