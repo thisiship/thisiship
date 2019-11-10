@@ -1,0 +1,13 @@
+<h3>Events</h3>
+<div class="event-feed">
+  <div class="event" *ngFor="let event of events">
+    <app-event
+      [title]="event.title"
+      [venue]="event.venue"
+      [startDate]="event.startDate"
+      [city]="event.city"
+      [bands]="event.bands"
+      [desc]="event.desc"
+    ></app-event>
+  </div>
+</div>
