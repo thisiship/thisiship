@@ -5,5 +5,6 @@ export interface EventModel {
   city: string;
   bands: string;
   desc: string;
+  price: number;
   // hipMeter: number;
 }

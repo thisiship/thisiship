@@ -32,6 +32,7 @@ import { HipMeterComponent } from './hip-meter/hip-meter.component';
   ],
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EventDialogComponent]
 })
 export class AppModule { }

@@ -15,6 +15,7 @@ export class EventFeedComponent implements OnInit {
       city: 'Buffalo, NY',
       bands: 'The Forest Dwellers, The Others',
       desc: 'Super groovy show dog. Wow Holy moly!',
+      price: 5,
     },
     {
       title: 'Forest Dwellers A MYSTERY',
@@ -23,6 +24,7 @@ export class EventFeedComponent implements OnInit {
       city: '?????!!?????',
       bands: 'The Forest Dwellers, ?????',
       desc: 'The most msyeterious show in the history of all shows! WHO EVEN KNOWS WHAT WILL HAPPEN? ',
+      price: 5,
     },
     {
       title: 'Forest Dwellers, Sugar Glider, RageChill',
@@ -35,6 +37,7 @@ export class EventFeedComponent implements OnInit {
         the event and how fucking important it is
       `,
       city: 'Rochester, NY',
+      price: 5,
     },
     {
       title: 'Forest Dwellers + others',
@@ -43,6 +46,7 @@ export class EventFeedComponent implements OnInit {
       startDate: new Date().toISOString(),
       desc: 'Super groovy show dog. Wow Holy moly!',
       city: 'Buffalo, NY',
+      price: 5,
     },
     {
       title: 'Forest Dwellers, Sugar Glider, RageChill',
@@ -51,6 +55,7 @@ export class EventFeedComponent implements OnInit {
       startDate: new Date().toISOString(),
       desc: 'Super groovy show dog. Wow Holy moly! So many acts such wow.',
       city: 'Rochester, NY',
+      price: 5,
     },
     {
       title: 'Forest Dwellers + others',
@@ -59,6 +64,7 @@ export class EventFeedComponent implements OnInit {
       startDate: new Date().toISOString(),
       desc: 'Super groovy show dog. Wow Holy moly!',
       city: 'Buffalo, NY',
+      price: 5,
     },
     {
       title: 'Forest Dwellers, Sugar Glider, RageChill',
@@ -67,6 +73,7 @@ export class EventFeedComponent implements OnInit {
       startDate: new Date().toISOString(),
       desc: 'Super groovy show dog. Wow Holy moly! So many acts such wow.',
       city: 'Rochester, NY',
+      price: 5,
     },
   ];
 
