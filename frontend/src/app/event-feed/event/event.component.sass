@@ -1,9 +1,30 @@
 @import '../../common'
 
 .event-card
+  height: 100%
+  width: 95%
+  margin: 0.5rem
   padding: 0.5rem
   border: 1px solid #aaaaaa
   box-shadow: 4px 4px #666666
+
+.event-card-header
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+
+  .title
+    flex: 1
+    min-width: 0px
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+
+  .price
+    flex: 1
+    color: $accent
 
 mat-card-content
   margin-bottom: 0
@@ -23,5 +44,3 @@ mat-icon
   color: $primary
   background-color: white
   border-radius: 12px
-
-
