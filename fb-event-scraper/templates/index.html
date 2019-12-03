@@ -55,8 +55,20 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>{{ event.datetime.display }}</p>
-            <p>{{ event.details }}</p>
+            <dl class="hosts_list row">
+              <dt class="col-sm-2">Date</dt>
+              <dd class="col-sm-10">{{ event.datetime.display }}</dd>
+              <dt class="col-sm-2">Hosts</dt>
+              <dd class="col-sm-10">
+                {% for host in event.hosts %}
+                <p class="host-link"><a href="{{ host.link }}" target="_blank">{{ host.name }}</a></p>
+                {% endfor %}
+              </dd>
+              <dt class="col-sm-12">Details</dt>
+              <dd class="col-sm-12">
+                <p>{{ event.details }}</p>
+              </dd>
+            </dl>
           </div>
         </div>
       </div>

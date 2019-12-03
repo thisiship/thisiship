@@ -31,9 +31,9 @@ class FBScraper():
         split = date_as_iso.split(" to ")
 
         return {
-          "display": date_elem.text,
-          "start": split[0],
-          "end": split[1]
+            "display": date_elem.text,
+            "start": split[0],
+            "end": split[1]
         }
 
     def get_venue_info(self):
@@ -50,8 +50,11 @@ class FBScraper():
 
     def get_hosts(self):
         host_info = []
+        # hosts = self.driver.find_elements_by_css_selector(
+        #     "div[data-testid='event_permalink_feature_line'] > a")
         hosts = self.driver.find_elements_by_css_selector(
-            "div[data-testid='event_permalink_feature_line'] > a")
+            "div h4 > a[href*='facebook']")
+
         for host in hosts:
             text = host.text
             href = host.get_attribute('href')
@@ -59,6 +62,7 @@ class FBScraper():
                 "name": text,
                 "link": href,
             })
+
         return host_info
 
     def fetch_event_info(self, event):
