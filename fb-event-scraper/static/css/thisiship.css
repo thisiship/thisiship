@@ -17,5 +17,9 @@ html, body {
 }
 
 .host-link {
-  margin: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.event-card {
+  margin-bottom: 0.5rem;
 }

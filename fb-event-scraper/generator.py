@@ -29,4 +29,5 @@ if __name__ == "__main__":
     # song_dict = generate_songs()
     # generate_index(song_dict)
     event_data = get_event_data()
-    generate_index(event_data)
+    event_data_sorted = sorted(event_data, key=lambda evt: evt["datetime"]["start"])
+    generate_index(event_data_sorted)

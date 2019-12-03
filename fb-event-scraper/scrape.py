@@ -30,10 +30,14 @@ class FBScraper():
         date_as_iso = date_elem.get_attribute("content")
         split = date_as_iso.split(" to ")
 
+        start = split[0]
+        end = start
+        if (len(split) == 2):
+          end = split[1]
         return {
             "display": date_elem.text,
-            "start": split[0],
-            "end": split[1]
+            "start": start,
+            "end": end
         }
 
     def get_venue_info(self):
