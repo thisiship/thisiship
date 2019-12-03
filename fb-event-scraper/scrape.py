@@ -25,8 +25,16 @@ class FBScraper():
         return self.driver.find_element_by_css_selector("div[data-testid='event-permalink-details'] span").text
 
     def get_event_date(self):
-        return self.driver.find_elements_by_css_selector("""
-        #event_summary #event_time_info div table tr td:nth-child(2) div[content]""")[0].text
+        date_elem = self.driver.find_elements_by_css_selector("""
+        #event_summary #event_time_info div table tr td:nth-child(2) div[content]""")[0]
+        date_as_iso = date_elem.get_attribute("content")
+        split = date_as_iso.split(" to ")
+
+        return {
+          "display": date_elem.text,
+          "start": split[0],
+          "end": split[1]
+        }
 
     def get_venue_info(self):
         venue_info = {}
@@ -60,6 +68,7 @@ class FBScraper():
         driver.get(url)
 
         new_event = {}
+        new_event["id"] = event_id
         new_event["url"] = url
         new_event["scrape_datetime"] = self.scrape_datetime
         new_event['title'] = self.get_event_title()

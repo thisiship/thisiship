@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <div class="row">
+    {% for event in event_list %}
+    <div class="col-md-4">
+      <div class="card event-card">
+        <div class="card-header text-truncate">{{ event.title }}</div>
+        <div class="card-body">
+          <div class="card-text">
+            <p>{{ event.datetime.display }}</p>
+            <a href="{{ event.venue.link }}">@{{ event.venue.name }}</a>
+          </div>
+        </div>
+        <div class="card-footer d-flex flex-row-reverse">
+          <a
+            class="btn btn-info footer-btn"
+            href="{{ event.url }}"
+            role="button"
+            target="_blank"
+          >
+            <i data-feather="facebook"></i>
+          </a>
+          <button
+            type="button"
+            class="btn btn-primary footer-btn"
+            data-toggle="modal"
+            data-target="#modal-{{ event.id }}"
+          >
+            <i data-feather="info"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modal-{{ event.id }}"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              {{ event.title }}
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>{{ event.datetime.display }}</p>
+            <p>{{ event.details }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
