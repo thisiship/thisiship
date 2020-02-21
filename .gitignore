@@ -1,4 +1,2 @@
-jsondump/*
-logs/*
-utils.pyc
-notes.txt
+api/node_modules
+.editorconfig
