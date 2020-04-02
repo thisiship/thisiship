@@ -1,0 +1,23 @@
+@import ../../globals
+
+div.live-streams-container
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  margin: 0.25rem
+
+  @media (min-width: $small-breakpoint)
+    flex-direction: row
+    flex-wrap: wrap
+
+  .mat-card
+    width: 90%
+    height: auto
+    margin-bottom: 0.25rem
+
+    @media (min-width: $small-breakpoint)
+      margin-right: 0.25rem
+      width: auto
+      min-width: calc($small-breakpoint - 100px)
+

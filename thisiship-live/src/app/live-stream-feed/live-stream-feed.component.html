@@ -1,0 +1,15 @@
+<div class="live-streams-container">
+  <mat-card *ngFor="let ls of livestreams">
+    <mat-card-title>{{ ls.title }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ ls.artistName }}</p>
+      <p>{{ getDateDisplayValue(ls.startDatetime) }}</p>
+      <p>{{ getDateDisplayValue(ls.endDatetime) }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button href="{{ ls.link }}" target="_blank" color="accent"
+        >Tune In</a
+      >
+    </mat-card-actions>
+  </mat-card>
+</div>
