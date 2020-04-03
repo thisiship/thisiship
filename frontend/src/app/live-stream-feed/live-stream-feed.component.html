@@ -7,9 +7,12 @@
       <p>{{ getDateDisplayValue(ls.endDatetime) }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <a mat-raised-button href="{{ ls.link }}" target="_blank" color="accent"
-        >Tune In</a
-      >
+      <a
+        mat-icon-button
+        href="{{ ls.facebookLink }}"
+        target="_blank"
+        ><i class="fab fa-facebook-square fa-lg"></i
+      ></a>
     </mat-card-actions>
   </mat-card>
 </div>

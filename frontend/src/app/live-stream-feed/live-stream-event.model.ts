@@ -3,5 +3,5 @@ export interface LiveStreamEvent {
   artistName: string;
   startDatetime: Date;
   endDatetime: Date;
-  link: string;
+  facebookLink: string;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { LiveStreamEvent } from './live-stream-event.model';
 
 @Component({
@@ -24,7 +25,7 @@ export class LiveStreamFeedComponent implements OnInit {
         artistName: 'Test Artist With a Longer Name',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
     });
     for (let i = 0; i < 5; i++) {
       lsList.push({
@@ -32,7 +33,7 @@ export class LiveStreamFeedComponent implements OnInit {
         artistName: 'TestUser',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
       });
     }
     lsList.push({
@@ -40,14 +41,14 @@ export class LiveStreamFeedComponent implements OnInit {
         artistName: 'Test Artist With a Longer Name',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
     });
     lsList.push({
         title: 'Really Long Live Stream Event Title',
         artistName: 'Test Artist With a Longer Name',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
     });
     for (let i = 0; i < 5; i++) {
       lsList.push({
@@ -55,7 +56,7 @@ export class LiveStreamFeedComponent implements OnInit {
         artistName: 'TestUser',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
       });
     }
     lsList.push({
@@ -63,7 +64,7 @@ export class LiveStreamFeedComponent implements OnInit {
         artistName: 'Test Artist With a Longer Name',
         startDatetime: new Date(),
         endDatetime: new Date(),
-        link: 'https://www.facebook.com'
+        facebookLink: 'https://www.facebook.com'
     });
     return lsList;
   }
