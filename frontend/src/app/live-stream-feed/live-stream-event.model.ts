@@ -4,4 +4,5 @@ export interface LiveStreamEvent {
   startDatetime: Date;
   endDatetime: Date;
   facebookLink: string;
+  youtubeLink: string;
 }

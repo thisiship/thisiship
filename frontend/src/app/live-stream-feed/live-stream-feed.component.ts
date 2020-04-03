@@ -29,6 +29,15 @@ export class LiveStreamFeedComponent implements OnInit, OnDestroy {
   }
 
   getDateDisplayValue(date: Date) {
-    return `${date.toDateString()} at ${date.getHours()}:${date.getMinutes()}`;
+    const minutes = date.getMinutes();
+    let minuteString = '00';
+    if (minutes === 0) {
+      minuteString = '00';
+    } else if (minutes < 10) {
+      minuteString = `0${minutes}`;
+    } else {
+      minuteString = minutes.toString();
+    }
+    return `${date.toDateString()} at ${date.getHours()}:${minuteString} Eastern Time`;
   }
 }
