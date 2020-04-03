@@ -7,12 +7,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
 import { LiveStreamFeedComponent } from './live-stream-feed/live-stream-feed.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LiveStreamFeedComponent
+    LiveStreamFeedComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
